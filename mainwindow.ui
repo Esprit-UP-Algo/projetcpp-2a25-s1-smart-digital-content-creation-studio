@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1381</width>
+    <width>1380</width>
     <height>709</height>
    </rect>
   </property>
@@ -14,87 +14,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QWidget {
-    background-color: #e6f7f5; /* light greenish background */
-    color: #003366; /* dark blue text */
-    font-size: 14px;
-}
-
-QPushButton {
-    background-color: #4CAF50; /* green button */
-    color: white;
-    border: none;
-    padding: 6px 12px;
-    border-radius: 6px;
-}
-
-QPushButton:hover {
-    background-color: #45a049; /* darker green on hover */
-}
-
-QLineEdit, QTextEdit {
-    background-color: #ffffff;
-    border: 2px solid #3399ff; /* blue border */
-    border-radius: 4px;
-    padding: 4px;
-}
-
-QLineEdit:focus, QTextEdit:focus {
-    border: 2px solid #0066cc; /* darker blue when focused */
-}
-
-QLabel {
-    color: #004d66; /* teal text */
-    font-weight: bold;
-}
-QTabWidget::pane {
-    border: 2px solid #3399ff; /* blue border */
-    border-radius: 6px;
-    background: #e6f7f5; /* light greenish background */
-    padding: 4px;
-}
-
-QTabBar::tab {
-    background: #4CAF50; /* green tabs */
-    color: white;
-    border: 1px solid #3399ff; /* blue border */
-    border-radius: 6px;
-    padding: 6px 12px;
-    margin-right: 2px;
-}
-
-QTabBar::tab:selected {
-    background: #3399ff; /* blue when selected */
-    color: white;
-}
-
-QTabBar::tab:hover {
-    background: #45a049; /* darker green hover */
-}
-QListView {
-    background-color: #ffffff;
-    border: 2px solid #3399ff; /* blue border */
-    border-radius: 6px;
-    padding: 4px;
-    show-decoration-selected: 1; /* highlight whole row */
-}
-
-QListView::item {
-    padding: 6px;
-    border-bottom: 1px solid #e6f7f5; /* subtle divider */
-    color: #003366; /* dark blue text */
-}
-
-QListView::item:selected {
-    background-color: #4CAF50; /* green selection */
-    color: white;
-    border: none;
-}
-
-QListView::item:hover {
-    background-color: #cceeff; /* light blue hover */
-    color: #004d66;
-}
+   <string notr="true">background-color: rgb(0, 0, 127);
 
 </string>
   </property>
@@ -102,9 +22,9 @@ QListView::item:hover {
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>40</x>
       <y>20</y>
-      <width>311</width>
+      <width>321</width>
       <height>401</height>
      </rect>
     </property>
@@ -125,7 +45,7 @@ QListView::item:hover {
        </rect>
       </property>
       <property name="text">
-       <string>ID</string>
+       <string>Cin</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_2">
@@ -202,6 +122,9 @@ QListView::item:hover {
         <height>28</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_2">
       <property name="geometry">
@@ -211,6 +134,9 @@ QListView::item:hover {
         <width>131</width>
         <height>28</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_3">
@@ -222,6 +148,9 @@ QListView::item:hover {
         <height>28</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_4">
       <property name="geometry">
@@ -231,6 +160,9 @@ QListView::item:hover {
         <width>131</width>
         <height>28</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_5">
@@ -242,6 +174,9 @@ QListView::item:hover {
         <height>28</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_6">
       <property name="geometry">
@@ -252,6 +187,9 @@ QListView::item:hover {
         <height>28</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
      </widget>
      <widget class="QPushButton" name="pushButton">
       <property name="geometry">
@@ -261,6 +199,10 @@ QListView::item:hover {
         <width>90</width>
         <height>29</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 170, 0);
+color:black</string>
       </property>
       <property name="text">
        <string>Ajouter</string>
@@ -275,6 +217,10 @@ QListView::item:hover {
         <height>29</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 170, 0);
+color:black</string>
+      </property>
       <property name="text">
        <string>Annuler</string>
       </property>
@@ -287,17 +233,20 @@ QListView::item:hover {
      <widget class="QLineEdit" name="lineEdit_7">
       <property name="geometry">
        <rect>
-        <x>130</x>
+        <x>120</x>
         <y>30</y>
         <width>131</width>
         <height>28</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
      </widget>
      <widget class="QLabel" name="label_7">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>10</x>
         <y>70</y>
         <width>63</width>
         <height>20</height>
@@ -310,17 +259,20 @@ QListView::item:hover {
      <widget class="QLineEdit" name="lineEdit_8">
       <property name="geometry">
        <rect>
-        <x>130</x>
+        <x>120</x>
         <y>150</y>
         <width>131</width>
         <height>28</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
      </widget>
      <widget class="QLabel" name="label_8">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>10</x>
         <y>230</y>
         <width>63</width>
         <height>20</height>
@@ -333,17 +285,20 @@ QListView::item:hover {
      <widget class="QLineEdit" name="lineEdit_9">
       <property name="geometry">
        <rect>
-        <x>130</x>
+        <x>120</x>
         <y>230</y>
         <width>131</width>
         <height>28</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
      </widget>
      <widget class="QLabel" name="label_9">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>10</x>
         <y>150</y>
         <width>63</width>
         <height>20</height>
@@ -356,37 +311,46 @@ QListView::item:hover {
      <widget class="QLineEdit" name="lineEdit_10">
       <property name="geometry">
        <rect>
-        <x>130</x>
+        <x>120</x>
         <y>110</y>
         <width>131</width>
         <height>28</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_11">
       <property name="geometry">
        <rect>
-        <x>130</x>
+        <x>120</x>
         <y>190</y>
         <width>131</width>
         <height>28</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
      </widget>
      <widget class="QLineEdit" name="lineEdit_12">
       <property name="geometry">
        <rect>
-        <x>130</x>
+        <x>120</x>
         <y>70</y>
         <width>131</width>
         <height>28</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
      </widget>
      <widget class="QLabel" name="label_10">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>10</x>
         <y>190</y>
         <width>91</width>
         <height>20</height>
@@ -405,6 +369,10 @@ QListView::item:hover {
         <height>29</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 170, 0);
+color:black</string>
+      </property>
       <property name="text">
        <string>Modifier</string>
       </property>
@@ -412,20 +380,20 @@ QListView::item:hover {
      <widget class="QLabel" name="label_11">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>10</x>
         <y>30</y>
         <width>51</width>
         <height>20</height>
        </rect>
       </property>
       <property name="text">
-       <string>ID</string>
+       <string>Cin</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_12">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>10</x>
         <y>110</y>
         <width>63</width>
         <height>20</height>
@@ -438,14 +406,55 @@ QListView::item:hover {
      <widget class="QPushButton" name="pushButton_6">
       <property name="geometry">
        <rect>
-        <x>180</x>
+        <x>200</x>
         <y>310</y>
         <width>90</width>
         <height>29</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 170, 0);
+color:black</string>
+      </property>
       <property name="text">
        <string>Annuler</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>stat</string>
+     </attribute>
+     <widget class="QTableView" name="tableView">
+      <property name="geometry">
+       <rect>
+        <x>-10</x>
+        <y>20</y>
+        <width>311</width>
+        <height>341</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>171</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 208, 255);
+background-color: rgb(170, 255, 161);
+color: black;
+background-color: rgb(255, 170, 0);</string>
+      </property>
+      <property name="text">
+       <string>statistique d'emplyée:</string>
       </property>
      </widget>
     </widget>
@@ -463,24 +472,31 @@ QListView::item:hover {
    <widget class="QLabel" name="label_13">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>420</x>
       <y>10</y>
-      <width>81</width>
+      <width>141</width>
       <height>21</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 170, 0);
+color:black</string>
+    </property>
     <property name="text">
-     <string>Recherche</string>
+     <string>Recherche par cin</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_13">
     <property name="geometry">
      <rect>
-      <x>530</x>
+      <x>580</x>
       <y>10</y>
       <width>121</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_3">
@@ -491,6 +507,10 @@ QListView::item:hover {
       <width>101</width>
       <height>29</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 170, 0);
+color:black</string>
     </property>
     <property name="text">
      <string>Trie Par Nom</string>
@@ -505,6 +525,10 @@ QListView::item:hover {
       <height>29</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 170, 0);
+color:black</string>
+    </property>
     <property name="text">
      <string>Supprimer</string>
     </property>
@@ -518,37 +542,59 @@ QListView::item:hover {
       <height>29</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 170, 0);
+color:black</string>
+    </property>
     <property name="text">
      <string>PDF</string>
     </property>
    </widget>
-   <widget class="QFrame" name="frame">
+   <widget class="QPushButton" name="pushButton_8">
     <property name="geometry">
      <rect>
-      <x>770</x>
+      <x>870</x>
       <y>450</y>
-      <width>261</width>
-      <height>191</height>
+      <width>111</width>
+      <height>29</height>
      </rect>
     </property>
-    <property name="frameShape">
-     <enum>QFrame::Shape::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Shadow::Raised</enum>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_14">
-    <property name="geometry">
-     <rect>
-      <x>740</x>
-      <y>450</y>
-      <width>41</width>
-      <height>20</height>
-     </rect>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 170, 0);
+color:black</string>
     </property>
     <property name="text">
-     <string>Stat</string>
+     <string>Qr code</string>
+    </property>
+   </widget>
+   <widget class="QTableView" name="tableView_2">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>490</y>
+      <width>181</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_9">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>190</y>
+      <width>101</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 170, 0);
+color:black</string>
+    </property>
+    <property name="text">
+     <string>Excel</string>
     </property>
    </widget>
   </widget>
@@ -557,8 +603,8 @@ QListView::item:hover {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1381</width>
-     <height>24</height>
+     <width>1380</width>
+     <height>25</height>
     </rect>
    </property>
   </widget>
