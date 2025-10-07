@@ -1,9 +1,0 @@
-# ninja log v6
-35	4890	7798385186279613	gestion_empolyee_autogen/timestamp	dbdf6538aee64f6d
-35	4890	7798385186279613	gestion_empolyee_autogen/mocs_compilation.cpp	dbdf6538aee64f6d
-35	4890	7798385186279613	C:/Users/malek/OneDrive/Documents/gestion_empolyee/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/gestion_empolyee_autogen/timestamp	dbdf6538aee64f6d
-35	4890	7798385186279613	C:/Users/malek/OneDrive/Documents/gestion_empolyee/build/Desktop_Qt_6_9_2_MinGW_64_bit-Debug/gestion_empolyee_autogen/mocs_compilation.cpp	dbdf6538aee64f6d
-4904	11671	7798385191196890	CMakeFiles/gestion_empolyee.dir/gestion_empolyee_autogen/mocs_compilation.cpp.obj	b8fa55590fc98e1b
-5267	13174	7798385194832129	CMakeFiles/gestion_empolyee.dir/main.cpp.obj	5612bc75edb59429
-5605	15699	7798385198223727	CMakeFiles/gestion_empolyee.dir/mainwindow.cpp.obj	6a8366cc48d60682
-15700	18038	7798385299166008	gestion_empolyee.exe	4b7ff66e982762f4
