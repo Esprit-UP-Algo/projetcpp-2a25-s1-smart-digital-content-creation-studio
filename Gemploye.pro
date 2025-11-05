@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -9,10 +9,14 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    connection.cpp \
+    employe.cpp \
     main.cpp \
     gemploye.cpp
 
 HEADERS += \
+    connection.h \
+    employe.h \
     gemploye.h
 
 FORMS += \
@@ -25,3 +29,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     img.qrc
+
+QT+=sql

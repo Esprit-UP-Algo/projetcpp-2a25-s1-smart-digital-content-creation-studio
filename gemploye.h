@@ -1,5 +1,6 @@
 #ifndef GEMPLOYE_H
 #define GEMPLOYE_H
+#include "employe.h"
 
 #include <QMainWindow>
 
@@ -30,7 +31,22 @@ private slots:
 
     void on_Employ_5_clicked();
 
+
+    void on_ajouter_clicked();
+
+    void on_refrech_clicked();
+
+
+    void on_modifier_clicked();
+
+    void on_tableemp_clicked(const QModelIndex &index);
+
+    void on_supprimer_clicked();
+
 private:
     Ui::Gemploye *ui;
+    employee e_global;
+    int selectedId = 0;  // instance globale pour CRUD
+
 };
 #endif // GEMPLOYE_H
