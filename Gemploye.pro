@@ -11,11 +11,13 @@ CONFIG += c++17
 SOURCES += \
     connection.cpp \
     main.cpp \
-    gemploye.cpp
+    gemploye.cpp \
+    projet.cpp
 
 HEADERS += \
     connection.h \
-    gemploye.h
+    gemploye.h \
+    projet.h
 
 FORMS += \
     gemploye.ui
@@ -28,4 +30,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     img.qrc
 
+QT += charts
 QT+=sql

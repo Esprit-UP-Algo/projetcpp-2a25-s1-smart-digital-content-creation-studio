@@ -476,7 +476,7 @@ QPushButton:pressed {
           <x>20</x>
           <y>40</y>
           <width>331</width>
-          <height>451</height>
+          <height>501</height>
          </rect>
         </property>
         <property name="font">
@@ -762,6 +762,52 @@ QPushButton:pressed {
          </property>
          <property name="text">
           <string>Annuler</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_11">
+         <property name="geometry">
+          <rect>
+           <x>100</x>
+           <y>440</y>
+           <width>121</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    /* 1. Base Orange &quot;Sun&quot; Background (Gradient for a slight shine) */
+    background-color: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #ff8c00,   /* Darker orange at the top */
+        stop: 1 #ffa500    /* Lighter orange at the bottom */
+    );
+    color: white; /* White text for contrast */
+    border: 2px solid transparent; /* Transparent border initially */
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    /* 2. Bright Contour (Border) when the mouse passes over */
+    border: 2px solid #ffcc00; /* Bright yellow border (the glow) */
+    background-color: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #ff951a,   /* Slightly brighter background on hover */
+        stop: 1 #ffb01a
+    );
+}
+
+QPushButton:pressed {
+    /* 3. Darker press effect */
+    background-color: rgb(0, 170, 127); /* Solid darker orange */
+    border: 2px solid #ffcc00;
+}
+Écrire à projet c++
+</string>
+         </property>
+         <property name="text">
+          <string>modifier</string>
          </property>
         </widget>
        </widget>
@@ -1186,11 +1232,34 @@ color: black;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgba(255, 255, 255, 30); /* Semi-transparent white background */
-    color: white; /* Text color */
-  
-    border-radius: 8px; /* Rounded corners */
-    padding: 5px; /* Adds space inside the widget for text, so it's not right up against the edges */</string>
+        <string notr="true">/* Combo (closed) */
+QComboBox {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #c4c4c4;
+    border-radius: 6px;
+    padding: 6px 8px;
+}
+
+/* Dropdown popup list */
+QComboBox QAbstractItemView {
+    background-color: #ffffff;
+    color: #000000;
+    selection-background-color: #e6f0ff;
+    selection-color: #000000;
+    outline: none;
+    border: 1px solid #c4c4c4;
+}
+
+QComboBox QAbstractItemView::item {
+    padding: 6px 10px;
+    min-height: 22px;
+}
+
+/* Hover/Focus states */
+QComboBox:hover, QComboBox:focus {
+    border: 1px solid #6aa0ff;
+}</string>
         </property>
         <item>
          <property name="text">

@@ -16,6 +16,7 @@ int main(int argc, char *argv[])
     bool test = c->createConnect();
 
     if (test) {
+        w.initAfterConnect();
         w.show();
         QMessageBox::information(
             nullptr,
