@@ -43,10 +43,23 @@ private slots:
 
     void on_supprimer_clicked();
 
+    void on_lineEdit_13_textChanged(const QString &arg1);
+
+    void on_comboBox_currentIndexChanged(int index);
+
+    void on_pushButton_5_clicked();
+
+    void on_actualiser_clicked();
+
+    void on_tabWidget_currentChanged(int index);
+
 private:
     Ui::Gemploye *ui;
     employee e_global;
     int selectedId = 0;  // instance globale pour CRUD
+    bool validerChamps(QString &erreur);
+
+    void afficherStatistiques();
 
 };
 #endif // GEMPLOYE_H

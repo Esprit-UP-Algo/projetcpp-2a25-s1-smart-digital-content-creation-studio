@@ -1,4 +1,5 @@
 #include "gemploye.h"
+#include "logindialog.h"
 #include <QApplication>
 #include <QMessageBox>
 #include "connection.h"
@@ -18,10 +19,16 @@ int main(int argc, char *argv[])
         QMessageBox::information(
             nullptr,
             QObject::tr("Database is open"),
-            QObject::tr("Connection successful.\nClick Cancel to exit."),
-            QMessageBox::Cancel
+            QObject::tr("Connection successful."),
+            QMessageBox::Ok
             );
-        w.show();
+
+        LoginDialog login;
+        if (login.exec() == QDialog::Accepted) {
+            w.show();
+        } else {
+            return 0; // l'utilisateur a annulé la connexion
+        }
     } else {
         QMessageBox::critical(
             nullptr,

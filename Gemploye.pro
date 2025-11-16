@@ -12,15 +12,18 @@ SOURCES += \
     connection.cpp \
     employe.cpp \
     main.cpp \
-    gemploye.cpp
+    gemploye.cpp \
+    logindialog.cpp
 
 HEADERS += \
     connection.h \
     employe.h \
-    gemploye.h
+    gemploye.h \
+    logindialog.h
 
 FORMS += \
-    gemploye.ui
+    gemploye.ui \
+    logindialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -30,4 +33,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 RESOURCES += \
     img.qrc
 
-QT+=sql
+QT+=sql network

@@ -474,9 +474,9 @@ QPushButton:pressed {
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>40</y>
-          <width>331</width>
-          <height>501</height>
+          <y>20</y>
+          <width>321</width>
+          <height>531</height>
          </rect>
         </property>
         <property name="font">
@@ -508,7 +508,7 @@ QPushButton:pressed {
          <property name="geometry">
           <rect>
            <x>0</x>
-           <y>60</y>
+           <y>40</y>
            <width>91</width>
            <height>31</height>
           </rect>
@@ -526,7 +526,7 @@ QPushButton:pressed {
          <property name="geometry">
           <rect>
            <x>0</x>
-           <y>120</y>
+           <y>90</y>
            <width>91</width>
            <height>31</height>
           </rect>
@@ -544,7 +544,7 @@ QPushButton:pressed {
          <property name="geometry">
           <rect>
            <x>0</x>
-           <y>180</y>
+           <y>140</y>
            <width>91</width>
            <height>31</height>
           </rect>
@@ -562,7 +562,7 @@ QPushButton:pressed {
          <property name="geometry">
           <rect>
            <x>0</x>
-           <y>230</y>
+           <y>190</y>
            <width>91</width>
            <height>31</height>
           </rect>
@@ -580,9 +580,9 @@ QPushButton:pressed {
          <property name="geometry">
           <rect>
            <x>0</x>
-           <y>280</y>
+           <y>240</y>
            <width>131</width>
-           <height>41</height>
+           <height>31</height>
           </rect>
          </property>
          <property name="font">
@@ -598,7 +598,7 @@ QPushButton:pressed {
          <property name="geometry">
           <rect>
            <x>0</x>
-           <y>340</y>
+           <y>290</y>
            <width>91</width>
            <height>31</height>
           </rect>
@@ -616,7 +616,7 @@ QPushButton:pressed {
          <property name="geometry">
           <rect>
            <x>150</x>
-           <y>60</y>
+           <y>40</y>
            <width>161</width>
            <height>31</height>
           </rect>
@@ -626,7 +626,7 @@ QPushButton:pressed {
          <property name="geometry">
           <rect>
            <x>150</x>
-           <y>120</y>
+           <y>90</y>
            <width>161</width>
            <height>31</height>
           </rect>
@@ -636,7 +636,7 @@ QPushButton:pressed {
          <property name="geometry">
           <rect>
            <x>150</x>
-           <y>180</y>
+           <y>140</y>
            <width>161</width>
            <height>31</height>
           </rect>
@@ -646,7 +646,7 @@ QPushButton:pressed {
          <property name="geometry">
           <rect>
            <x>150</x>
-           <y>230</y>
+           <y>190</y>
            <width>161</width>
            <height>31</height>
           </rect>
@@ -656,9 +656,9 @@ QPushButton:pressed {
          <property name="geometry">
           <rect>
            <x>150</x>
-           <y>280</y>
+           <y>240</y>
            <width>161</width>
-           <height>41</height>
+           <height>31</height>
           </rect>
          </property>
         </widget>
@@ -666,7 +666,7 @@ QPushButton:pressed {
          <property name="geometry">
           <rect>
            <x>150</x>
-           <y>340</y>
+           <y>290</y>
            <width>161</width>
            <height>31</height>
           </rect>
@@ -675,8 +675,8 @@ QPushButton:pressed {
         <widget class="QPushButton" name="ajouter">
          <property name="geometry">
           <rect>
-           <x>20</x>
-           <y>390</y>
+           <x>10</x>
+           <y>440</y>
            <width>121</width>
            <height>41</height>
           </rect>
@@ -721,8 +721,8 @@ QPushButton:pressed {
         <widget class="QPushButton" name="modifier">
          <property name="geometry">
           <rect>
-           <x>180</x>
-           <y>390</y>
+           <x>190</x>
+           <y>440</y>
            <width>121</width>
            <height>41</height>
           </rect>
@@ -762,6 +762,108 @@ QPushButton:pressed {
          </property>
          <property name="text">
           <string>modifier</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="actualiser">
+         <property name="geometry">
+          <rect>
+           <x>100</x>
+           <y>490</y>
+           <width>121</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    /* 1. Base Orange &quot;Sun&quot; Background (Gradient for a slight shine) */
+    background-color: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #ff8c00,   /* Darker orange at the top */
+        stop: 1 #ffa500    /* Lighter orange at the bottom */
+    );
+    color: white; /* White text for contrast */
+    border: 2px solid transparent; /* Transparent border initially */
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    /* 2. Bright Contour (Border) when the mouse passes over */
+    border: 2px solid #ffcc00; /* Bright yellow border (the glow) */
+    background-color: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #ff951a,   /* Slightly brighter background on hover */
+        stop: 1 #ffb01a
+    );
+}
+
+QPushButton:pressed {
+    /* 3. Darker press effect */
+    background-color: rgb(0, 170, 127); /* Solid darker orange */
+    border: 2px solid #ffcc00;
+}
+Écrire à projet c++
+</string>
+         </property>
+         <property name="text">
+          <string>actualiser</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_15">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>340</y>
+           <width>91</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Poste</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_38">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>390</y>
+           <width>91</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Salaire</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="linentel_2">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>340</y>
+           <width>161</width>
+           <height>31</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="linentel_3">
+         <property name="geometry">
+          <rect>
+           <x>150</x>
+           <y>390</y>
+           <width>161</width>
+           <height>31</height>
+          </rect>
          </property>
         </widget>
        </widget>
@@ -857,7 +959,7 @@ background-color: transparent;</string>
         </item>
         <item>
          <property name="text">
-          <string>Date d'embauche</string>
+          <string>Nom</string>
          </property>
         </item>
        </widget>
