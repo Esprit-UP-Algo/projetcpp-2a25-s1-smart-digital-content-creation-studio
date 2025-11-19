@@ -263,14 +263,14 @@ QPushButton:pressed {
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>280</x>
       <y>0</y>
       <width>1161</width>
       <height>651</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>4</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QTabWidget" name="tabWidget">
@@ -675,9 +675,9 @@ QPushButton:pressed {
         <widget class="QPushButton" name="pushButton">
          <property name="geometry">
           <rect>
-           <x>20</x>
+           <x>10</x>
            <y>390</y>
-           <width>121</width>
+           <width>101</width>
            <height>41</height>
           </rect>
          </property>
@@ -721,7 +721,7 @@ QPushButton:pressed {
         <widget class="QPushButton" name="pushButton_2">
          <property name="geometry">
           <rect>
-           <x>180</x>
+           <x>110</x>
            <y>390</y>
            <width>121</width>
            <height>41</height>
@@ -762,6 +762,52 @@ QPushButton:pressed {
          </property>
          <property name="text">
           <string>Annuler</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_20">
+         <property name="geometry">
+          <rect>
+           <x>230</x>
+           <y>390</y>
+           <width>91</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    /* 1. Base Orange &quot;Sun&quot; Background (Gradient for a slight shine) */
+    background-color: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #ff8c00,   /* Darker orange at the top */
+        stop: 1 #ffa500    /* Lighter orange at the bottom */
+    );
+    color: white; /* White text for contrast */
+    border: 2px solid transparent; /* Transparent border initially */
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    /* 2. Bright Contour (Border) when the mouse passes over */
+    border: 2px solid #ffcc00; /* Bright yellow border (the glow) */
+    background-color: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #ff951a,   /* Slightly brighter background on hover */
+        stop: 1 #ffb01a
+    );
+}
+
+QPushButton:pressed {
+    /* 3. Darker press effect */
+    background-color: rgb(0, 170, 127); /* Solid darker orange */
+    border: 2px solid #ffcc00;
+}
+Écrire à projet c++
+</string>
+         </property>
+         <property name="text">
+          <string>mod</string>
          </property>
         </widget>
        </widget>
@@ -3055,50 +3101,6 @@ QPushButton:pressed {
          <string>Exporter PDF</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_22">
-        <property name="geometry">
-         <rect>
-          <x>900</x>
-          <y>480</y>
-          <width>131</width>
-          <height>41</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
-    /* 1. Base Orange &quot;Sun&quot; Background (Gradient for a slight shine) */
-    background-color: qlineargradient(
-        x1: 0, y1: 0, x2: 0, y2: 1,
-        stop: 0 #ff8c00,   /* Darker orange at the top */
-        stop: 1 #ffa500    /* Lighter orange at the bottom */
-    );
-    color: white; /* White text for contrast */
-    border: 2px solid transparent; /* Transparent border initially */
-    border-radius: 8px;
-    padding: 10px 20px;
-    font-weight: bold;
-}
-
-QPushButton:hover {
-    /* 2. Bright Contour (Border) when the mouse passes over */
-    border: 2px solid #ffcc00; /* Bright yellow border (the glow) */
-    background-color: qlineargradient(
-        x1: 0, y1: 0, x2: 0, y2: 1,
-        stop: 0 #ff951a,   /* Slightly brighter background on hover */
-        stop: 1 #ffb01a
-    );
-}
-
-QPushButton:pressed {
-    /* 3. Darker press effect */
-    background-color: rgb(170, 0, 0); /* Solid darker orange */
-    border: 2px solid #ffcc00;
-}</string>
-        </property>
-        <property name="text">
-         <string>Supprimer </string>
-        </property>
-       </widget>
        <widget class="QLabel" name="label_47">
         <property name="geometry">
          <rect>
@@ -3499,7 +3501,7 @@ QPushButton:pressed {
          <rect>
           <x>350</x>
           <y>210</y>
-          <width>741</width>
+          <width>611</width>
           <height>261</height>
          </rect>
         </property>
@@ -3627,16 +3629,52 @@ color: black;
          <rect>
           <x>930</x>
           <y>150</y>
-          <width>91</width>
+          <width>162</width>
           <height>31</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgba(255, 255, 255, 30); /* Semi-transparent white background */
-    color: white; /* Text color */
-    border: 1px solid white; /* A subtle, semi-transparent white border */
-    border-radius: 8px; /* Rounded corners */
-    padding: 5px; /* Adds space inside the widget for text, so it's not right up against the edges *</string>
+         <string notr="true">QComboBox {
+    background-color: rgba(255, 255, 255, 30);
+    color: white;
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 5px;
+    min-width: 150px;
+}
+QComboBox::drop-down {
+    border: none;
+    width: 20px;
+}
+QComboBox::down-arrow {
+    image: none;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 6px solid white;
+    margin-right: 5px;
+}
+QComboBox QAbstractItemView {
+    background-color: white;
+    color: black;
+    border: 1px solid #c4c4c4;
+    border-radius: 8px;
+    selection-background-color: #ff8c00;
+    selection-color: white;
+    padding: 5px;
+    min-width: 180px;
+}
+QComboBox QAbstractItemView::item {
+    padding: 8px;
+    border-radius: 4px;
+}
+QComboBox QAbstractItemView::item:hover {
+    background-color: #ffa500;
+    color: white;
+}
+QComboBox QAbstractItemView::item:selected {
+    background-color: #ff8c00;
+    color: white;
+}</string>
         </property>
         <property name="placeholderText">
          <string/>
@@ -3651,34 +3689,6 @@ color: black;
           <string>inactif</string>
          </property>
         </item>
-       </widget>
-       <widget class="QLineEdit" name="lineEdit_32">
-        <property name="geometry">
-         <rect>
-          <x>770</x>
-          <y>480</y>
-          <width>111</width>
-          <height>41</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>9</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLineEdit {
-    background-color: rgba(255, 255, 255, 30); /* Semi-transparent white background */
-    color: white; /* Text color */
-    border: 1px solid white; /* A subtle, semi-transparent white border */
-    border-radius: 8px; /* Rounded corners */
-    padding: 5px; /* Adds space inside the widget for text, so it's not right up against the edges */
-}</string>
-        </property>
-        <property name="placeholderText">
-         <string>Code</string>
-        </property>
        </widget>
       </widget>
       <widget class="QWidget" name="tab_10">
@@ -3848,7 +3858,7 @@ QPushButton:pressed {
 }</string>
         </property>
         <property name="text">
-         <string>supprimer</string>
+         <string>annuler</string>
         </property>
        </widget>
        <widget class="QPushButton" name="pushButton_29">
@@ -3972,29 +3982,11 @@ background-color: transparent;
         <property name="title">
          <string>Ajouter/Modifier un matériel</string>
         </property>
-        <widget class="QLabel" name="label_8">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>60</y>
-           <width>141</width>
-           <height>41</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>code unique</string>
-         </property>
-        </widget>
         <widget class="QLabel" name="label_9">
          <property name="geometry">
           <rect>
-           <x>0</x>
-           <y>120</y>
+           <x>10</x>
+           <y>90</y>
            <width>141</width>
            <height>41</height>
           </rect>
@@ -4005,13 +3997,13 @@ background-color: transparent;
           </font>
          </property>
          <property name="text">
-          <string>type d'appareil</string>
+          <string>type_appareil</string>
          </property>
         </widget>
         <widget class="QLabel" name="label_10">
          <property name="geometry">
           <rect>
-           <x>0</x>
+           <x>30</x>
            <y>180</y>
            <width>101</width>
            <height>41</height>
@@ -4029,8 +4021,8 @@ background-color: transparent;
         <widget class="QLabel" name="label_11">
          <property name="geometry">
           <rect>
-           <x>0</x>
-           <y>250</y>
+           <x>20</x>
+           <y>270</y>
            <width>111</width>
            <height>31</height>
           </rect>
@@ -4041,14 +4033,14 @@ background-color: transparent;
           </font>
          </property>
          <property name="text">
-          <string>référence</string>
+          <string>reference</string>
          </property>
         </widget>
         <widget class="QLabel" name="label_12">
          <property name="geometry">
           <rect>
            <x>0</x>
-           <y>310</y>
+           <y>360</y>
            <width>131</width>
            <height>41</height>
           </rect>
@@ -4059,24 +4051,14 @@ background-color: transparent;
           </font>
          </property>
          <property name="text">
-          <string>disponibilité</string>
-         </property>
-        </widget>
-        <widget class="QLineEdit" name="lineEdit_7">
-         <property name="geometry">
-          <rect>
-           <x>160</x>
-           <y>60</y>
-           <width>161</width>
-           <height>41</height>
-          </rect>
+          <string>disponibilite</string>
          </property>
         </widget>
         <widget class="QLineEdit" name="lineEdit_9">
          <property name="geometry">
           <rect>
-           <x>160</x>
-           <y>120</y>
+           <x>170</x>
+           <y>90</y>
            <width>151</width>
            <height>41</height>
           </rect>
@@ -4085,7 +4067,7 @@ background-color: transparent;
         <widget class="QLineEdit" name="lineEdit_10">
          <property name="geometry">
           <rect>
-           <x>160</x>
+           <x>170</x>
            <y>180</y>
            <width>161</width>
            <height>41</height>
@@ -4095,8 +4077,8 @@ background-color: transparent;
         <widget class="QLineEdit" name="lineEdit_11">
          <property name="geometry">
           <rect>
-           <x>160</x>
-           <y>250</y>
+           <x>180</x>
+           <y>270</y>
            <width>161</width>
            <height>31</height>
           </rect>
@@ -4105,9 +4087,9 @@ background-color: transparent;
         <widget class="QPushButton" name="pushButton_8">
          <property name="geometry">
           <rect>
-           <x>20</x>
-           <y>390</y>
-           <width>121</width>
+           <x>0</x>
+           <y>420</y>
+           <width>101</width>
            <height>41</height>
           </rect>
          </property>
@@ -4151,9 +4133,9 @@ QPushButton:pressed {
         <widget class="QPushButton" name="pushButton_9">
          <property name="geometry">
           <rect>
-           <x>180</x>
-           <y>390</y>
-           <width>121</width>
+           <x>250</x>
+           <y>420</y>
+           <width>101</width>
            <height>41</height>
           </rect>
          </property>
@@ -4191,14 +4173,14 @@ QPushButton:pressed {
 </string>
          </property>
          <property name="text">
-          <string>Annuler</string>
+          <string>SUPP</string>
          </property>
         </widget>
         <widget class="QComboBox" name="comboBox_10">
          <property name="geometry">
           <rect>
            <x>170</x>
-           <y>320</y>
+           <y>360</y>
            <width>141</width>
            <height>31</height>
           </rect>
@@ -4220,6 +4202,52 @@ QPushButton:pressed {
            <string>non disponible</string>
           </property>
          </item>
+        </widget>
+        <widget class="QPushButton" name="pushButton_11">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>420</y>
+           <width>101</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    /* 1. Base Orange &quot;Sun&quot; Background (Gradient for a slight shine) */
+    background-color: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #ff8c00,   /* Darker orange at the top */
+        stop: 1 #ffa500    /* Lighter orange at the bottom */
+    );
+    color: white; /* White text for contrast */
+    border: 2px solid transparent; /* Transparent border initially */
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    /* 2. Bright Contour (Border) when the mouse passes over */
+    border: 2px solid #ffcc00; /* Bright yellow border (the glow) */
+    background-color: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #ff951a,   /* Slightly brighter background on hover */
+        stop: 1 #ffb01a
+    );
+}
+
+QPushButton:pressed {
+    /* 3. Darker press effect */
+    background-color: rgb(0, 170, 127); /* Solid darker orange */
+    border: 2px solid #ffcc00;
+}
+Écrire à projet c++
+</string>
+         </property>
+         <property name="text">
+          <string>Modifier</string>
+         </property>
         </widget>
        </widget>
        <widget class="QComboBox" name="comboBox_11">
@@ -4346,7 +4374,7 @@ color: black;
      <x>0</x>
      <y>0</y>
      <width>1437</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
