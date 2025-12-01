@@ -44,10 +44,27 @@ QSqlQueryModel* Projet::trierSelonColonne(const QString& colonne, const QString&
 bool Projet::ajouter()
 {
     QSqlQuery query;
+    
+    // Get the next ID_PROJET by finding the maximum and adding 1
+    query.prepare("SELECT NVL(MAX(ID_PROJET), 0) + 1 FROM PROJET");
+    if (!query.exec())
+    {
+        qDebug() << "Erreur lors de la récupération du prochain ID:" << query.lastError().text();
+        return false;
+    }
+    
+    int nextId = 1;
+    if (query.next())
+    {
+        nextId = query.value(0).toInt();
+    }
+    
+    // Insert with ID_PROJET included
     query.prepare(
-        "INSERT INTO PROJET (CODE, TITRE, BUDGET, DEADLINE) "
-        "VALUES (:code, :titre, :budget, TO_DATE(:deadline, 'YYYY-MM-DD'))");
+        "INSERT INTO PROJET (ID_PROJET, CODE, TITRE, BUDGET, DEADLINE) "
+        "VALUES (:id_projet, :code, :titre, :budget, TO_DATE(:deadline, 'YYYY-MM-DD'))");
 
+    query.bindValue(":id_projet", nextId);
     query.bindValue(":code", code);
     query.bindValue(":titre", titre);
     query.bindValue(":budget", budget);
@@ -193,3 +210,33 @@ QSqlQueryModel* Projet::trierParDeadline()
 {
     return trierSelonColonne(QStringLiteral("DEADLINE"));
 }
+
+// Afficher les projets avec deadline dans les 7 prochains jours
+QSqlQueryModel* Projet::afficherProjetsUrgents()
+{
+    QSqlQueryModel* model = new QSqlQueryModel();
+    QSqlQuery query;
+    
+    query.prepare(
+        "SELECT CODE, TITRE, BUDGET, TO_CHAR(DEADLINE, 'YYYY-MM-DD') AS DEADLINE "
+        "FROM PROJET "
+        "WHERE DEADLINE <= SYSDATE + 7 "
+        "ORDER BY DEADLINE ASC");
+    
+    if (!query.exec())
+    {
+        qDebug() << "Erreur lors de la récupération des projets urgents:" << query.lastError().text();
+        delete model;
+        return nullptr;
+    }
+    
+    model->setQuery(query);
+    
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("Code"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("Titre"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("Budget"));
+    model->setHeaderData(3, Qt::Horizontal, QObject::tr("Deadline"));
+    
+    return model;
+}
+

@@ -1,0 +1,135 @@
+┌────────────────────────────────────────────────┐
+│        QR CODE FEATURE - EXAMPLES              │
+└────────────────────────────────────────────────┘
+
+BEFORE (Old Version):
+═══════════════════════════════════════════════
+When you selected a project and clicked "Generate QR Code":
+
+╔════════════════════════════════════╗
+║   Project QR Code - P001           ║
+╠════════════════════════════════════╣
+║                                    ║
+║  Project: Website Redesign         ║
+║  Code: P001                        ║
+║                                    ║
+║  [QR CODE IMAGE]                   ║
+║  Contains:                         ║
+║  - Project Code: P001              ║
+║  - Title: Website Redesign         ║
+║  - Budget: 50000                   ║
+║  - Deadline: 2025-12-01            ║
+║                                    ║
+║  "Scan this QR code to view        ║
+║   project details"                 ║
+║                                    ║
+║          [Close]                   ║
+╚════════════════════════════════════╝
+
+
+AFTER (New Version):
+═══════════════════════════════════════════════
+When you click "Generate QR Code" (no selection needed):
+
+╔════════════════════════════════════╗
+║   Urgent Projects QR Code          ║
+╠════════════════════════════════════╣
+║                                    ║
+║  ⚠️ Deadline Warnings               ║
+║  3 urgent project(s)               ║
+║                                    ║
+║  [LARGER QR CODE IMAGE]            ║
+║  Contains:                         ║
+║  ⚠️ URGENT PROJECT DEADLINES ⚠️    ║
+║                                    ║
+║  🔴 Project 'Website Redesign'     ║
+║      deadline expires TODAY!       ║
+║                                    ║
+║  ⏰ Project 'Mobile App'            ║
+║      deadline expires in 2 days    ║
+║                                    ║
+║  ⏰ Project 'Database Migration'   ║
+║      deadline expires in 5 days    ║
+║                                    ║
+║  Total: 3 urgent project(s)        ║
+║                                    ║
+║  "Scan to see which projects       ║
+║   are expiring soon"               ║
+║                                    ║
+║          [Close]                   ║
+╚════════════════════════════════════╝
+
+
+DIFFERENT SCENARIOS:
+═══════════════════════════════════════════════
+
+Scenario 1: Expired Deadline
+─────────────────────────────────
+When scanned, QR code shows:
+  ❌ Project 'Marketing Campaign' deadline EXPIRED 3 day(s) ago!
+
+Scenario 2: Due Today
+─────────────────────────────────
+When scanned, QR code shows:
+  🔴 Project 'Website Launch' deadline expires TODAY!
+
+Scenario 3: Due Tomorrow
+─────────────────────────────────
+When scanned, QR code shows:
+  ⏰ Project 'Client Presentation' deadline expires in 1 day!
+
+Scenario 4: Due in Few Days
+─────────────────────────────────
+When scanned, QR code shows:
+  ⏰ Project 'Database Backup' deadline expires in 5 days
+
+
+KEY DIFFERENCES:
+═══════════════════════════════════════════════
+OLD                          NEW
+─────────────────────────────────────────────
+✗ One project only           ✓ All urgent projects
+✗ Requires selection         ✓ No selection needed
+✗ Shows Code, Budget         ✓ Only project name
+✗ Shows raw date             ✓ Shows days remaining
+✗ No urgency indicator       ✓ Visual emoji indicators
+✗ Technical info             ✓ Human-friendly messages
+
+
+WHAT'S INCLUDED IN QR CODE:
+═══════════════════════════════════════════════
+✓ Project Title (Name)
+✓ Days until expiration (e.g., "in 2 days")
+✓ Visual indicators (⚠️, 🔴, ⏰, ❌)
+✓ Total count of urgent projects
+
+✗ NOT included anymore:
+  - Project Code
+  - Budget amount
+  - Raw deadline date
+  - Other technical details
+
+
+BENEFITS:
+═══════════════════════════════════════════════
+1. SIMPLER TO READ
+   - No technical jargon
+   - Clear, plain language messages
+   
+2. ACTIONABLE INFORMATION
+   - Immediately know how many days left
+   - See which projects are most urgent
+   
+3. VISUAL PRIORITY
+   - Red circle (🔴) = Due today
+   - Warning (⏰) = Due soon
+   - X mark (❌) = Already expired
+   
+4. COMPREHENSIVE
+   - See ALL urgent projects at once
+   - No need to generate multiple QR codes
+   
+5. USER FRIENDLY
+   - No selection required
+   - One click to generate
+   - Easy to scan and understand

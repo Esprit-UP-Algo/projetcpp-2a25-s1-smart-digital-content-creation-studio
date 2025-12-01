@@ -1,0 +1,133 @@
+╔════════════════════════════════════════════════════════════════╗
+║          HOW TO APPLY THE QR CODE CHANGES                      ║
+╚════════════════════════════════════════════════════════════════╝
+
+IMPORTANT: The code has been updated, but you MUST rebuild the 
+application for the changes to take effect!
+
+┌────────────────────────────────────────────────────────────────┐
+│ STEP 1: CLOSE THE RUNNING APPLICATION                         │
+└────────────────────────────────────────────────────────────────┘
+If your application is currently running, close it completely.
+
+
+┌────────────────────────────────────────────────────────────────┐
+│ STEP 2: CLEAN THE BUILD                                       │
+└────────────────────────────────────────────────────────────────┘
+In Qt Creator:
+  - Go to: Build → Clean All
+  OR
+  - Right-click on the project → Clean
+
+
+┌────────────────────────────────────────────────────────────────┐
+│ STEP 3: REBUILD THE APPLICATION                               │
+└────────────────────────────────────────────────────────────────┘
+In Qt Creator:
+  - Go to: Build → Rebuild All
+  OR
+  - Press: Ctrl + Shift + B
+  OR
+  - Right-click on the project → Rebuild
+
+
+┌────────────────────────────────────────────────────────────────┐
+│ STEP 4: RUN THE APPLICATION                                   │
+└────────────────────────────────────────────────────────────────┘
+In Qt Creator:
+  - Press F5 (Run)
+  OR
+  - Click the green "Run" button
+  OR
+  - Go to: Build → Run
+
+
+┌────────────────────────────────────────────────────────────────┐
+│ STEP 5: TEST THE NEW QR CODE FUNCTIONALITY                    │
+└────────────────────────────────────────────────────────────────┘
+
+Test 1: QR Code in Form (Live Display)
+──────────────────────────────────────
+1. Navigate to the project management page
+2. Select a project OR enter project details in the form
+3. Look at the QR code display area (qrCodeLabel)
+4. The QR code should now show:
+   - Project name only
+   - "Deadline expires in X days" message
+   - NOT showing: Code, Budget, or raw date
+
+Test 2: Generate QR Code Button
+────────────────────────────────
+1. Click the "Generate QR Code" button
+2. A dialog should appear with:
+   - Title: "⚠️ Deadline Warnings"
+   - QR code showing ALL projects with deadlines ≤ 7 days
+3. Scan the QR code with your phone
+4. Should see messages like:
+   ⏰ Project 'ProjectName' deadline expires in 3 days
+
+
+┌────────────────────────────────────────────────────────────────┐
+│ WHAT CHANGED IN THE CODE                                      │
+└────────────────────────────────────────────────────────────────┘
+
+TWO functions were updated:
+
+1. generateProjectQRCode() - Line 715-813
+   • Shows ALL urgent projects (deadline ≤ 7 days)
+   • Displays simple deadline warning messages
+
+2. mettreAJourQRCode() - Line 1105-1168
+   • Updates QR code in the form when viewing/editing a project
+   • Shows deadline warning for the current project only
+
+
+┌────────────────────────────────────────────────────────────────┐
+│ EXPECTED QR CODE CONTENT AFTER SCANNING                       │
+└────────────────────────────────────────────────────────────────┘
+
+For a single project (in form):
+───────────────────────────────
+  ⏰ Project 'Website Redesign'
+  Deadline expires in 3 days
+
+For multiple urgent projects (Generate button):
+────────────────────────────────────────────────
+  ⚠️ URGENT PROJECT DEADLINES ⚠️
+  
+  🔴 Project 'Website' deadline expires TODAY!
+  
+  ⏰ Project 'Mobile App' deadline expires in 2 days
+  
+  ⏰ Project 'Database' deadline expires in 5 days
+  
+  Total: 3 urgent project(s)
+
+
+┌────────────────────────────────────────────────────────────────┐
+│ TROUBLESHOOTING                                                │
+└────────────────────────────────────────────────────────────────┘
+
+Problem: QR code still shows old format (Code, Budget, etc.)
+Solution:
+  ✓ Make sure you did "Clean All" before rebuilding
+  ✓ Completely close and restart Qt Creator
+  ✓ Delete the entire "build" folder manually
+  ✓ Rebuild the project from scratch
+
+Problem: Application won't compile
+Solution:
+  ✓ Check for compile errors in the "Compile Output" panel
+  ✓ Make sure all files are saved (Ctrl+S)
+  ✓ Verify that projet.h and projet.cpp are properly updated
+
+Problem: QR code is empty or shows "Remplissez les champs"
+Solution:
+  ✓ Make sure the project has a title and deadline set
+  ✓ Check that the form fields are properly filled
+
+
+═══════════════════════════════════════════════════════════════
+If you still see the old QR code content after rebuilding,
+please let me know and I'll help you further troubleshoot!
+═══════════════════════════════════════════════════════════════

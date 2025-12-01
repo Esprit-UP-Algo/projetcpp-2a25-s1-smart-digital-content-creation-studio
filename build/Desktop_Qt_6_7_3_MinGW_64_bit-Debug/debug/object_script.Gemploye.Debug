@@ -1,0 +1,11 @@
+debug/arduino.o
+debug/connection.o
+debug/main.o
+debug/gemploye.o
+debug/projet.o
+debug/qrcodegenerator.o
+debug/qrcodescanner.o
+debug/qrc_img.o
+debug/moc_gemploye.o
+debug/moc_qrcodegenerator.o
+debug/moc_qrcodescanner.o

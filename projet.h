@@ -46,6 +46,7 @@ public:
     QSqlQueryModel* trierParTitre();
     QSqlQueryModel* trierParBudget();
     QSqlQueryModel* trierParDeadline();
+    QSqlQueryModel* afficherProjetsUrgents();
 };
 
 #endif // PROJET_H

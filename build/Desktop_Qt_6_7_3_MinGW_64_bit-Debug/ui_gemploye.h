@@ -21,6 +21,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
@@ -66,6 +67,7 @@ public:
     QLineEdit *lineEdit_6;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
+    QPushButton *pushButton_11;
     QLabel *label_14;
     QTableWidget *tableWidget;
     QLineEdit *lineEdit_14;
@@ -78,6 +80,9 @@ public:
     QWidget *tab;
     QPushButton *pushButton_12;
     QLineEdit *lineEdit_16;
+    QPushButton *notificationButton;
+    QScrollArea *notificationPanel;
+    QWidget *scrollAreaWidgetContents;
     QPushButton *pushButton_13;
     QPushButton *pushButton_23;
     QTableWidget *tableWidget_2;
@@ -85,16 +90,20 @@ public:
     QComboBox *comboBox_2;
     QLabel *label_44;
     QGroupBox *groupBox_6;
+    QScrollArea *scrollArea_projetForm;
+    QWidget *scrollAreaWidgetContents_projetForm;
+    QLabel *label_56;
+    QLineEdit *lineEdit_44;
     QLabel *label_50;
     QLabel *label_51;
     QLabel *label_52;
+    QDateEdit *dateEdit_4;
     QLineEdit *lineEdit_38;
     QLineEdit *lineEdit_39;
+    QLabel *label_qrCodeTitle;
+    QLabel *qrCodeLabel;
     QPushButton *pushButton_32;
     QPushButton *pushButton_33;
-    QLabel *label_56;
-    QLineEdit *lineEdit_44;
-    QDateEdit *dateEdit_4;
     QLineEdit *lineEdit_34;
     QWidget *tab_2;
     QWidget *widget;
@@ -561,7 +570,7 @@ public:
 "}"));
         groupBox = new QGroupBox(tab_3);
         groupBox->setObjectName("groupBox");
-        groupBox->setGeometry(QRect(20, 40, 331, 451));
+        groupBox->setGeometry(QRect(20, 40, 331, 501));
         groupBox->setFont(font);
         groupBox->setStyleSheet(QString::fromUtf8("background-color: white; /* White background for the active tab */\n"
 "    color: black; /* Black text for the active tab */\n"
@@ -690,6 +699,41 @@ public:
 "}\n"
 "\303\211crire \303\240 projet c++\n"
 ""));
+        pushButton_11 = new QPushButton(groupBox);
+        pushButton_11->setObjectName("pushButton_11");
+        pushButton_11->setGeometry(QRect(100, 440, 121, 41));
+        pushButton_11->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    /* 1. Base Orange \"Sun\" Background (Gradient for a slight shine) */\n"
+"    background-color: qlineargradient(\n"
+"        x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"        stop: 0 #ff8c00,   /* Darker orange at the top */\n"
+"        stop: 1 #ffa500    /* Lighter orange at the bottom */\n"
+"    );\n"
+"    color: white; /* White text for contrast */\n"
+"    border: 2px solid transparent; /* Transparent border initially */\n"
+"    border-radius: 8px;\n"
+"    padding: 10px 20px;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    /* 2. Bright Contour (Border) when the mouse passes over */\n"
+"    border: 2px solid #ffcc00; /* Bright yellow border (the glow) */\n"
+"    background-color: qlineargradient(\n"
+"        x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"        stop: 0 #ff951a,   /* Slightly brighter background on hover */\n"
+"        stop: 1 #ffb01a\n"
+"    );\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    /* 3. Darker press effect */\n"
+"    background-color: rgb(0, 170, 127); /* Solid da"
+                        "rker orange */\n"
+"    border: 2px solid #ffcc00;\n"
+"}\n"
+"\303\211crire \303\240 projet c++\n"
+""));
         label_14 = new QLabel(tab_3);
         label_14->setObjectName("label_14");
         label_14->setGeometry(QRect(770, 120, 81, 31));
@@ -730,9 +774,10 @@ public:
 "}"));
         label_7 = new QLabel(tab_3);
         label_7->setObjectName("label_7");
-        label_7->setGeometry(QRect(990, -40, 191, 181));
+        label_7->setGeometry(QRect(900, 15, 100, 100));
         label_7->setStyleSheet(QString::fromUtf8("image: url(:/images/logo.png);\n"
 "background-color: transparent;"));
+        label_7->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
         comboBox = new QComboBox(tab_3);
         comboBox->addItem(QString());
         comboBox->addItem(QString());
@@ -815,6 +860,47 @@ public:
 "    border-radius: 8px; /* Rounded corners */\n"
 "    padding: 5px; /* Adds space inside the widget for text, so it's not right up against the edges */\n"
 "}"));
+        notificationButton = new QPushButton(tab);
+        notificationButton->setObjectName("notificationButton");
+        notificationButton->setGeometry(QRect(860, 40, 80, 40));
+        notificationButton->setCursor(QCursor(Qt::CursorShape::PointingHandCursor));
+        notificationButton->setFont(font);
+        notificationPanel = new QScrollArea(tab);
+        notificationPanel->setObjectName("notificationPanel");
+        notificationPanel->setGeometry(QRect(700, 90, 320, 380));
+        notificationPanel->setWidgetResizable(true);
+        notificationPanel->setVisible(false);
+        notificationPanel->setAutoFillBackground(true);
+        notificationPanel->setFrameShape(QFrame::StyledPanel);
+        notificationPanel->setStyleSheet(QString::fromUtf8("QScrollArea {\n"
+"    background-color: #ffffff;\n"
+"    border: 3px solid #5A6BF2;\n"
+"    border-radius: 16px;\n"
+"}\n"
+"QScrollArea > QWidget > QWidget {\n"
+"    background-color: #ffffff;\n"
+"}\n"
+"QScrollBar:vertical {\n"
+"    background-color: #f0f0f0;\n"
+"    width: 12px;\n"
+"    border-radius: 6px;\n"
+"    margin: 2px;\n"
+"}\n"
+"QScrollBar::handle:vertical {\n"
+"    background-color: #5A6BF2;\n"
+"    border-radius: 6px;\n"
+"    min-height: 20px;\n"
+"}\n"
+"QScrollBar::handle:vertical:hover {\n"
+"    background-color: #3452c9;\n"
+"}\n"
+"QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {\n"
+"    height: 0px;\n"
+"}"));
+        scrollAreaWidgetContents = new QWidget();
+        scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 348, 398));
+        notificationPanel->setWidget(scrollAreaWidgetContents);
         pushButton_13 = new QPushButton(tab);
         pushButton_13->setObjectName("pushButton_13");
         pushButton_13->setGeometry(QRect(990, 460, 121, 41));
@@ -910,11 +996,34 @@ public:
         comboBox_2->addItem(QString());
         comboBox_2->setObjectName("comboBox_2");
         comboBox_2->setGeometry(QRect(880, 100, 121, 31));
-        comboBox_2->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 30); /* Semi-transparent white background */\n"
-"    color: white; /* Text color */\n"
-"  \n"
-"    border-radius: 8px; /* Rounded corners */\n"
-"    padding: 5px; /* Adds space inside the widget for text, so it's not right up against the edges */"));
+        comboBox_2->setStyleSheet(QString::fromUtf8("/* Combo (closed) */\n"
+"QComboBox {\n"
+"    background-color: #ffffff;\n"
+"    color: #000000;\n"
+"    border: 1px solid #c4c4c4;\n"
+"    border-radius: 6px;\n"
+"    padding: 6px 8px;\n"
+"}\n"
+"\n"
+"/* Dropdown popup list */\n"
+"QComboBox QAbstractItemView {\n"
+"    background-color: #ffffff;\n"
+"    color: #000000;\n"
+"    selection-background-color: #e6f0ff;\n"
+"    selection-color: #000000;\n"
+"    outline: none;\n"
+"    border: 1px solid #c4c4c4;\n"
+"}\n"
+"\n"
+"QComboBox QAbstractItemView::item {\n"
+"    padding: 6px 10px;\n"
+"    min-height: 22px;\n"
+"}\n"
+"\n"
+"/* Hover/Focus states */\n"
+"QComboBox:hover, QComboBox:focus {\n"
+"    border: 1px solid #6aa0ff;\n"
+"}"));
         label_44 = new QLabel(tab);
         label_44->setObjectName("label_44");
         label_44->setGeometry(QRect(1000, -20, 151, 131));
@@ -922,7 +1031,7 @@ public:
 "background-color: transparent;"));
         groupBox_6 = new QGroupBox(tab);
         groupBox_6->setObjectName("groupBox_6");
-        groupBox_6->setGeometry(QRect(20, 40, 331, 451));
+        groupBox_6->setGeometry(QRect(20, 40, 331, 600));
         groupBox_6->setFont(font);
         groupBox_6->setStyleSheet(QString::fromUtf8("background-color: white; /* White background for the active tab */\n"
 "    color: black; /* Black text for the active tab */\n"
@@ -939,27 +1048,99 @@ public:
 "\n"
 "\n"
 "    background-color: rgba(255, 255, 255, 0.1); /* A subtle white transparency on hover */"));
-        label_50 = new QLabel(groupBox_6);
+        scrollArea_projetForm = new QScrollArea(groupBox_6);
+        scrollArea_projetForm->setObjectName("scrollArea_projetForm");
+        scrollArea_projetForm->setGeometry(QRect(0, 0, 331, 600));
+        scrollArea_projetForm->setWidgetResizable(true);
+        scrollArea_projetForm->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+        scrollArea_projetForm->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        scrollArea_projetForm->setStyleSheet(QString::fromUtf8("QScrollArea {\n"
+"    border: none;\n"
+"    background: transparent;\n"
+"}\n"
+"QScrollBar:vertical {\n"
+"    background-color: #f0f0f0;\n"
+"    width: 10px;\n"
+"    border-radius: 5px;\n"
+"    margin: 0px;\n"
+"}\n"
+"QScrollBar::handle:vertical {\n"
+"    background-color: #5A6BF2;\n"
+"    border-radius: 5px;\n"
+"    min-height: 20px;\n"
+"}\n"
+"QScrollBar::handle:vertical:hover {\n"
+"    background-color: #3452c9;\n"
+"}\n"
+"QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {\n"
+"    height: 0px;\n"
+"}"));
+        scrollAreaWidgetContents_projetForm = new QWidget();
+        scrollAreaWidgetContents_projetForm->setObjectName("scrollAreaWidgetContents_projetForm");
+        scrollAreaWidgetContents_projetForm->setGeometry(QRect(0, 0, 329, 700));
+        scrollAreaWidgetContents_projetForm->setMinimumSize(QSize(329, 700));
+        label_56 = new QLabel(scrollAreaWidgetContents_projetForm);
+        label_56->setObjectName("label_56");
+        label_56->setGeometry(QRect(10, 20, 121, 41));
+        label_56->setFont(font);
+        lineEdit_44 = new QLineEdit(scrollAreaWidgetContents_projetForm);
+        lineEdit_44->setObjectName("lineEdit_44");
+        lineEdit_44->setGeometry(QRect(140, 20, 171, 41));
+        label_50 = new QLabel(scrollAreaWidgetContents_projetForm);
         label_50->setObjectName("label_50");
         label_50->setGeometry(QRect(10, 150, 91, 31));
         label_50->setFont(font);
-        label_51 = new QLabel(groupBox_6);
+        label_51 = new QLabel(scrollAreaWidgetContents_projetForm);
         label_51->setObjectName("label_51");
         label_51->setGeometry(QRect(10, 220, 91, 41));
         label_51->setFont(font);
-        label_52 = new QLabel(groupBox_6);
+        label_52 = new QLabel(scrollAreaWidgetContents_projetForm);
         label_52->setObjectName("label_52");
         label_52->setGeometry(QRect(10, 300, 111, 31));
         label_52->setFont(font);
-        lineEdit_38 = new QLineEdit(groupBox_6);
+        dateEdit_4 = new QDateEdit(scrollAreaWidgetContents_projetForm);
+        dateEdit_4->setObjectName("dateEdit_4");
+        dateEdit_4->setGeometry(QRect(150, 300, 131, 31));
+        dateEdit_4->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 30); /* Semi-transparent white background */\n"
+"    color: white; /* Text color */\n"
+"    border: 1px solid white; /* A subtle, semi-transparent white border */\n"
+"    border-radius: 8px; /* Rounded corners */\n"
+"    padding: 5px; /* Adds space inside the widget for text, so it's not right up against the edges */"));
+        lineEdit_38 = new QLineEdit(scrollAreaWidgetContents_projetForm);
         lineEdit_38->setObjectName("lineEdit_38");
         lineEdit_38->setGeometry(QRect(140, 150, 161, 31));
-        lineEdit_39 = new QLineEdit(groupBox_6);
+        lineEdit_39 = new QLineEdit(scrollAreaWidgetContents_projetForm);
         lineEdit_39->setObjectName("lineEdit_39");
         lineEdit_39->setGeometry(QRect(140, 220, 161, 41));
-        pushButton_32 = new QPushButton(groupBox_6);
+        label_qrCodeTitle = new QLabel(scrollAreaWidgetContents_projetForm);
+        label_qrCodeTitle->setObjectName("label_qrCodeTitle");
+        label_qrCodeTitle->setGeometry(QRect(10, 350, 311, 25));
+        QFont font1;
+        font1.setPointSize(11);
+        font1.setBold(true);
+        label_qrCodeTitle->setFont(font1);
+        label_qrCodeTitle->setStyleSheet(QString::fromUtf8("color: #2a174c;\n"
+"background: transparent;\n"
+"padding: 5px;"));
+        label_qrCodeTitle->setAlignment(Qt::AlignCenter);
+        qrCodeLabel = new QLabel(scrollAreaWidgetContents_projetForm);
+        qrCodeLabel->setObjectName("qrCodeLabel");
+        qrCodeLabel->setGeometry(QRect(65, 380, 200, 200));
+        qrCodeLabel->setStyleSheet(QString::fromUtf8("QLabel {\n"
+"    background-color: white;\n"
+"    border: 3px solid #5A6BF2;\n"
+"    border-radius: 12px;\n"
+"    padding: 10px;\n"
+"}\n"
+"QLabel:hover {\n"
+"    border: 3px solid #3452c9;\n"
+"    box-shadow: 0 4px 8px rgba(90, 107, 242, 0.3);\n"
+"}"));
+        qrCodeLabel->setAlignment(Qt::AlignCenter);
+        qrCodeLabel->setScaledContents(true);
+        pushButton_32 = new QPushButton(scrollAreaWidgetContents_projetForm);
         pushButton_32->setObjectName("pushButton_32");
-        pushButton_32->setGeometry(QRect(20, 390, 121, 41));
+        pushButton_32->setGeometry(QRect(20, 590, 121, 41));
         pushButton_32->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    /* 1. Base Orange \"Sun\" Background (Gradient for a slight shine) */\n"
 "    background-color: qlineargradient(\n"
@@ -992,9 +1173,9 @@ public:
 "}\n"
 "\303\211crire \303\240 projet c++\n"
 ""));
-        pushButton_33 = new QPushButton(groupBox_6);
+        pushButton_33 = new QPushButton(scrollAreaWidgetContents_projetForm);
         pushButton_33->setObjectName("pushButton_33");
-        pushButton_33->setGeometry(QRect(180, 390, 121, 41));
+        pushButton_33->setGeometry(QRect(180, 590, 121, 41));
         pushButton_33->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    /* 1. Base Orange \"Sun\" Background (Gradient for a slight shine) */\n"
 "    background-color: qlineargradient(\n"
@@ -1024,31 +1205,15 @@ public:
 "    background-color: rgb(0, 170, 127); /* Solid da"
                         "rker orange */\n"
 "    border: 2px solid #ffcc00;\n"
-"}\n"
-"\303\211crire \303\240 projet c++\n"
-""));
-        label_56 = new QLabel(groupBox_6);
-        label_56->setObjectName("label_56");
-        label_56->setGeometry(QRect(0, 70, 121, 41));
-        label_56->setFont(font);
-        lineEdit_44 = new QLineEdit(groupBox_6);
-        lineEdit_44->setObjectName("lineEdit_44");
-        lineEdit_44->setGeometry(QRect(140, 70, 171, 41));
-        dateEdit_4 = new QDateEdit(groupBox_6);
-        dateEdit_4->setObjectName("dateEdit_4");
-        dateEdit_4->setGeometry(QRect(150, 300, 131, 31));
-        dateEdit_4->setStyleSheet(QString::fromUtf8("background-color: rgba(255, 255, 255, 30); /* Semi-transparent white background */\n"
-"    color: white; /* Text color */\n"
-"    border: 1px solid white; /* A subtle, semi-transparent white border */\n"
-"    border-radius: 8px; /* Rounded corners */\n"
-"    padding: 5px; /* Adds space inside the widget for text, so it's not right up against the edges *"));
+"}"));
+        scrollArea_projetForm->setWidget(scrollAreaWidgetContents_projetForm);
         lineEdit_34 = new QLineEdit(tab);
         lineEdit_34->setObjectName("lineEdit_34");
         lineEdit_34->setGeometry(QRect(840, 460, 111, 41));
-        QFont font1;
-        font1.setPointSize(9);
-        font1.setBold(true);
-        lineEdit_34->setFont(font1);
+        QFont font2;
+        font2.setPointSize(9);
+        font2.setBold(true);
+        lineEdit_34->setFont(font2);
         lineEdit_34->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    background-color: rgba(255, 255, 255, 30); /* Semi-transparent white background */\n"
 "    color: white; /* Text color */\n"
@@ -1113,10 +1278,10 @@ public:
         groupBox_3 = new QGroupBox(tab_5);
         groupBox_3->setObjectName("groupBox_3");
         groupBox_3->setGeometry(QRect(10, 10, 341, 501));
-        QFont font2;
-        font2.setPointSize(10);
-        font2.setBold(true);
-        groupBox_3->setFont(font2);
+        QFont font3;
+        font3.setPointSize(10);
+        font3.setBold(true);
+        groupBox_3->setFont(font3);
         groupBox_3->setStyleSheet(QString::fromUtf8("background-color: white; /* White background for the active tab */\n"
 "    color: black; /* Black text for the active tab */\n"
 "    border: 1px solid #c4c4c4; /* A light border */\n"
@@ -1135,45 +1300,45 @@ public:
         lineEdit_8 = new QLineEdit(groupBox_3);
         lineEdit_8->setObjectName("lineEdit_8");
         lineEdit_8->setGeometry(QRect(170, 40, 131, 41));
-        lineEdit_8->setFont(font1);
+        lineEdit_8->setFont(font2);
         label_16 = new QLabel(groupBox_3);
         label_16->setObjectName("label_16");
         label_16->setGeometry(QRect(0, 120, 131, 41));
-        QFont font3;
-        font3.setFamilies({QString::fromUtf8("Segoe UI")});
-        font3.setPointSize(9);
-        font3.setBold(true);
-        font3.setItalic(false);
-        label_16->setFont(font3);
+        QFont font4;
+        font4.setFamilies({QString::fromUtf8("Segoe UI")});
+        font4.setPointSize(9);
+        font4.setBold(true);
+        font4.setItalic(false);
+        label_16->setFont(font4);
         label_16->setStyleSheet(QString::fromUtf8("font: 700 9pt \"Segoe UI\";"));
         label_17 = new QLabel(groupBox_3);
         label_17->setObjectName("label_17");
         label_17->setGeometry(QRect(0, 190, 101, 31));
-        label_17->setFont(font3);
+        label_17->setFont(font4);
         label_17->setStyleSheet(QString::fromUtf8("font: 700 9pt \"Segoe UI\";"));
         label_18 = new QLabel(groupBox_3);
         label_18->setObjectName("label_18");
         label_18->setGeometry(QRect(0, 250, 161, 41));
-        label_18->setFont(font3);
+        label_18->setFont(font4);
         label_18->setStyleSheet(QString::fromUtf8("font: 700 9pt \"Segoe UI\";"));
         label_19 = new QLabel(groupBox_3);
         label_19->setObjectName("label_19");
         label_19->setGeometry(QRect(0, 310, 111, 31));
-        label_19->setFont(font3);
+        label_19->setFont(font4);
         label_19->setStyleSheet(QString::fromUtf8("font: 700 9pt \"Segoe UI\";"));
         label_20 = new QLabel(groupBox_3);
         label_20->setObjectName("label_20");
         label_20->setGeometry(QRect(0, 40, 151, 41));
-        label_20->setFont(font3);
+        label_20->setFont(font4);
         label_20->setStyleSheet(QString::fromUtf8("font: 700 9pt \"Segoe UI\";"));
         lineEdit_17 = new QLineEdit(groupBox_3);
         lineEdit_17->setObjectName("lineEdit_17");
         lineEdit_17->setGeometry(QRect(172, 115, 131, 41));
-        lineEdit_17->setFont(font1);
+        lineEdit_17->setFont(font2);
         lineEdit_18 = new QLineEdit(groupBox_3);
         lineEdit_18->setObjectName("lineEdit_18");
         lineEdit_18->setGeometry(QRect(170, 190, 131, 31));
-        lineEdit_18->setFont(font1);
+        lineEdit_18->setFont(font2);
         dateEdit = new QDateEdit(groupBox_3);
         dateEdit->setObjectName("dateEdit");
         dateEdit->setGeometry(QRect(170, 260, 131, 31));
@@ -1193,10 +1358,7 @@ public:
         pushButton_10 = new QPushButton(groupBox_3);
         pushButton_10->setObjectName("pushButton_10");
         pushButton_10->setGeometry(QRect(20, 390, 121, 41));
-        QFont font4;
-        font4.setPointSize(11);
-        font4.setBold(true);
-        pushButton_10->setFont(font4);
+        pushButton_10->setFont(font1);
         pushButton_10->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    /* 1. Base Orange \"Sun\" Background (Gradient for a slight shine) */\n"
 "    background-color: qlineargradient(\n"
@@ -1230,7 +1392,7 @@ public:
         pushButton_14 = new QPushButton(groupBox_3);
         pushButton_14->setObjectName("pushButton_14");
         pushButton_14->setGeometry(QRect(170, 390, 121, 41));
-        pushButton_14->setFont(font4);
+        pushButton_14->setFont(font1);
         pushButton_14->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    /* 1. Base Orange \"Sun\" Background (Gradient for a slight shine) */\n"
 "    background-color: qlineargradient(\n"
@@ -1264,7 +1426,7 @@ public:
         label_21 = new QLabel(tab_5);
         label_21->setObjectName("label_21");
         label_21->setGeometry(QRect(360, 130, 191, 31));
-        label_21->setFont(font2);
+        label_21->setFont(font3);
         label_21->setStyleSheet(QString::fromUtf8("\n"
 "    background-color: rgba(255, 255, 255, 30); /* Semi-transparent white background */\n"
 "    color: white; /* Text color */\n"
@@ -1275,7 +1437,7 @@ public:
         label_22 = new QLabel(tab_5);
         label_22->setObjectName("label_22");
         label_22->setGeometry(QRect(830, 130, 91, 31));
-        label_22->setFont(font2);
+        label_22->setFont(font3);
         label_22->setStyleSheet(QString::fromUtf8(" background-color: rgba(255, 255, 255, 30); /* Semi-transparent white background */\n"
 "    color: white; /* Text color */\n"
 "  \n"
@@ -1296,7 +1458,7 @@ public:
         lineEdit_19 = new QLineEdit(tab_5);
         lineEdit_19->setObjectName("lineEdit_19");
         lineEdit_19->setGeometry(QRect(590, 130, 211, 31));
-        lineEdit_19->setFont(font1);
+        lineEdit_19->setFont(font2);
         lineEdit_19->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    background-color: rgba(255, 255, 255, 30); /* Semi-transparent white background */\n"
 "    color: white; /* Text color */\n"
@@ -1307,7 +1469,7 @@ public:
         pushButton_3 = new QPushButton(tab_5);
         pushButton_3->setObjectName("pushButton_3");
         pushButton_3->setGeometry(QRect(360, 460, 171, 41));
-        pushButton_3->setFont(font4);
+        pushButton_3->setFont(font1);
         pushButton_3->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    /* 1. Base Orange \"Sun\" Background (Gradient for a slight shine) */\n"
 "    background-color: qlineargradient(\n"
@@ -1341,7 +1503,7 @@ public:
         pushButton_7 = new QPushButton(tab_5);
         pushButton_7->setObjectName("pushButton_7");
         pushButton_7->setGeometry(QRect(1000, 460, 131, 41));
-        pushButton_7->setFont(font4);
+        pushButton_7->setFont(font1);
         pushButton_7->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    /* 1. Base Orange \"Sun\" Background (Gradient for a slight shine) */\n"
 "    background-color: qlineargradient(\n"
@@ -1393,7 +1555,7 @@ public:
         lineEdit_20 = new QLineEdit(tab_5);
         lineEdit_20->setObjectName("lineEdit_20");
         lineEdit_20->setGeometry(QRect(860, 460, 111, 41));
-        lineEdit_20->setFont(font1);
+        lineEdit_20->setFont(font2);
         lineEdit_20->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    background-color: rgba(255, 255, 255, 30); /* Semi-transparent white background */\n"
 "    color: white; /* Text color */\n"
@@ -1463,7 +1625,7 @@ public:
         groupBox_4 = new QGroupBox(tab_7);
         groupBox_4->setObjectName("groupBox_4");
         groupBox_4->setGeometry(QRect(20, 40, 341, 491));
-        groupBox_4->setFont(font2);
+        groupBox_4->setFont(font3);
         groupBox_4->setStyleSheet(QString::fromUtf8("background-color: white; /* White background for the active tab */\n"
 "    color: black; /* Black text for the active tab */\n"
 "    border: 1px solid #c4c4c4; /* A light border */\n"
@@ -1482,39 +1644,39 @@ public:
         lineEdit_21 = new QLineEdit(groupBox_4);
         lineEdit_21->setObjectName("lineEdit_21");
         lineEdit_21->setGeometry(QRect(170, 40, 131, 41));
-        lineEdit_21->setFont(font1);
+        lineEdit_21->setFont(font2);
         label_23 = new QLabel(groupBox_4);
         label_23->setObjectName("label_23");
         label_23->setGeometry(QRect(0, 120, 151, 41));
-        label_23->setFont(font3);
+        label_23->setFont(font4);
         label_23->setStyleSheet(QString::fromUtf8("font: 700 9pt \"Segoe UI\";"));
         label_24 = new QLabel(groupBox_4);
         label_24->setObjectName("label_24");
         label_24->setGeometry(QRect(0, 190, 161, 41));
-        label_24->setFont(font3);
+        label_24->setFont(font4);
         label_24->setStyleSheet(QString::fromUtf8("font: 700 9pt \"Segoe UI\";"));
         label_25 = new QLabel(groupBox_4);
         label_25->setObjectName("label_25");
         label_25->setGeometry(QRect(20, 340, 111, 31));
-        label_25->setFont(font3);
+        label_25->setFont(font4);
         label_25->setStyleSheet(QString::fromUtf8("font: 700 9pt \"Segoe UI\";"));
         label_26 = new QLabel(groupBox_4);
         label_26->setObjectName("label_26");
         label_26->setGeometry(QRect(0, 40, 151, 41));
-        label_26->setFont(font3);
+        label_26->setFont(font4);
         label_26->setStyleSheet(QString::fromUtf8("font: 700 9pt \"Segoe UI\";"));
         lineEdit_22 = new QLineEdit(groupBox_4);
         lineEdit_22->setObjectName("lineEdit_22");
         lineEdit_22->setGeometry(QRect(172, 115, 131, 41));
-        lineEdit_22->setFont(font1);
+        lineEdit_22->setFont(font2);
         lineEdit_23 = new QLineEdit(groupBox_4);
         lineEdit_23->setObjectName("lineEdit_23");
         lineEdit_23->setGeometry(QRect(170, 190, 131, 31));
-        lineEdit_23->setFont(font1);
+        lineEdit_23->setFont(font2);
         pushButton_15 = new QPushButton(groupBox_4);
         pushButton_15->setObjectName("pushButton_15");
         pushButton_15->setGeometry(QRect(10, 410, 121, 41));
-        pushButton_15->setFont(font4);
+        pushButton_15->setFont(font1);
         pushButton_15->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    /* 1. Base Orange \"Sun\" Background (Gradient for a slight shine) */\n"
 "    background-color: qlineargradient(\n"
@@ -1548,7 +1710,7 @@ public:
         pushButton_16 = new QPushButton(groupBox_4);
         pushButton_16->setObjectName("pushButton_16");
         pushButton_16->setGeometry(QRect(170, 410, 121, 41));
-        pushButton_16->setFont(font4);
+        pushButton_16->setFont(font1);
         pushButton_16->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    /* 1. Base Orange \"Sun\" Background (Gradient for a slight shine) */\n"
 "    background-color: qlineargradient(\n"
@@ -1582,12 +1744,12 @@ public:
         label_27 = new QLabel(groupBox_4);
         label_27->setObjectName("label_27");
         label_27->setGeometry(QRect(0, 270, 201, 31));
-        label_27->setFont(font3);
+        label_27->setFont(font4);
         label_27->setStyleSheet(QString::fromUtf8("font: 700 9pt \"Segoe UI\";"));
         lineEdit_24 = new QLineEdit(groupBox_4);
         lineEdit_24->setObjectName("lineEdit_24");
         lineEdit_24->setGeometry(QRect(210, 270, 131, 31));
-        lineEdit_24->setFont(font1);
+        lineEdit_24->setFont(font2);
         comboBox_4 = new QComboBox(groupBox_4);
         comboBox_4->addItem(QString());
         comboBox_4->addItem(QString());
@@ -1602,7 +1764,7 @@ public:
         label_28 = new QLabel(tab_7);
         label_28->setObjectName("label_28");
         label_28->setGeometry(QRect(380, 130, 191, 31));
-        label_28->setFont(font2);
+        label_28->setFont(font3);
         label_28->setStyleSheet(QString::fromUtf8("\n"
 "    background-color: rgba(255, 255, 255, 30); /* Semi-transparent white background */\n"
 "    color: white; /* Text color */\n"
@@ -1613,7 +1775,7 @@ public:
         label_29 = new QLabel(tab_7);
         label_29->setObjectName("label_29");
         label_29->setGeometry(QRect(840, 130, 91, 31));
-        label_29->setFont(font2);
+        label_29->setFont(font3);
         label_29->setStyleSheet(QString::fromUtf8(" background-color: rgba(255, 255, 255, 30); /* Semi-transparent white background */\n"
 "    color: white; /* Text color */\n"
 "  \n"
@@ -1631,7 +1793,7 @@ public:
         lineEdit_25 = new QLineEdit(tab_7);
         lineEdit_25->setObjectName("lineEdit_25");
         lineEdit_25->setGeometry(QRect(600, 130, 211, 31));
-        lineEdit_25->setFont(font1);
+        lineEdit_25->setFont(font2);
         lineEdit_25->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    background-color: rgba(255, 255, 255, 30); /* Semi-transparent white background */\n"
 "    color: white; /* Text color */\n"
@@ -1642,7 +1804,7 @@ public:
         pushButton_17 = new QPushButton(tab_7);
         pushButton_17->setObjectName("pushButton_17");
         pushButton_17->setGeometry(QRect(380, 470, 171, 41));
-        pushButton_17->setFont(font4);
+        pushButton_17->setFont(font1);
         pushButton_17->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    /* 1. Base Orange \"Sun\" Background (Gradient for a slight shine) */\n"
 "    background-color: qlineargradient(\n"
@@ -1676,7 +1838,7 @@ public:
         pushButton_18 = new QPushButton(tab_7);
         pushButton_18->setObjectName("pushButton_18");
         pushButton_18->setGeometry(QRect(960, 480, 141, 41));
-        pushButton_18->setFont(font4);
+        pushButton_18->setFont(font1);
         pushButton_18->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    /* 1. Base Orange \"Sun\" Background (Gradient for a slight shine) */\n"
 "    background-color: qlineargradient(\n"
@@ -1726,7 +1888,7 @@ public:
         lineEdit_26 = new QLineEdit(tab_7);
         lineEdit_26->setObjectName("lineEdit_26");
         lineEdit_26->setGeometry(QRect(820, 480, 111, 41));
-        lineEdit_26->setFont(font1);
+        lineEdit_26->setFont(font2);
         lineEdit_26->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    background-color: rgba(255, 255, 255, 30); /* Semi-transparent white background */\n"
 "    color: white; /* Text color */\n"
@@ -1868,7 +2030,7 @@ public:
         groupBox_5 = new QGroupBox(tab_9);
         groupBox_5->setObjectName("groupBox_5");
         groupBox_5->setGeometry(QRect(10, 30, 321, 481));
-        groupBox_5->setFont(font2);
+        groupBox_5->setFont(font3);
         groupBox_5->setStyleSheet(QString::fromUtf8("background-color: white; /* White background for the active tab */\n"
 "    color: black; /* Black text for the active tab */\n"
 "    border: 1px solid #c4c4c4; /* A light border */\n"
@@ -1887,40 +2049,40 @@ public:
         lineEdit_12 = new QLineEdit(groupBox_5);
         lineEdit_12->setObjectName("lineEdit_12");
         lineEdit_12->setGeometry(QRect(170, 40, 131, 41));
-        lineEdit_12->setFont(font1);
+        lineEdit_12->setFont(font2);
         label_30 = new QLabel(groupBox_5);
         label_30->setObjectName("label_30");
         label_30->setGeometry(QRect(0, 100, 71, 31));
-        label_30->setFont(font3);
+        label_30->setFont(font4);
         label_30->setStyleSheet(QString::fromUtf8("font: 700 9pt \"Segoe UI\";"));
         label_31 = new QLabel(groupBox_5);
         label_31->setObjectName("label_31");
         label_31->setGeometry(QRect(0, 150, 131, 41));
-        label_31->setFont(font3);
+        label_31->setFont(font4);
         label_31->setStyleSheet(QString::fromUtf8("font: 700 9pt \"Segoe UI\";"));
         label_32 = new QLabel(groupBox_5);
         label_32->setObjectName("label_32");
         label_32->setGeometry(QRect(0, 210, 161, 41));
-        label_32->setFont(font3);
+        label_32->setFont(font4);
         label_32->setStyleSheet(QString::fromUtf8("font: 700 9pt \"Segoe UI\";"));
         label_33 = new QLabel(groupBox_5);
         label_33->setObjectName("label_33");
         label_33->setGeometry(QRect(0, 270, 111, 41));
-        label_33->setFont(font3);
+        label_33->setFont(font4);
         label_33->setStyleSheet(QString::fromUtf8("font: 700 9pt \"Segoe UI\";"));
         label_34 = new QLabel(groupBox_5);
         label_34->setObjectName("label_34");
         label_34->setGeometry(QRect(0, 40, 151, 41));
-        label_34->setFont(font3);
+        label_34->setFont(font4);
         label_34->setStyleSheet(QString::fromUtf8("font: 700 9pt \"Segoe UI\";"));
         lineEdit_27 = new QLineEdit(groupBox_5);
         lineEdit_27->setObjectName("lineEdit_27");
         lineEdit_27->setGeometry(QRect(172, 150, 131, 41));
-        lineEdit_27->setFont(font1);
+        lineEdit_27->setFont(font2);
         lineEdit_28 = new QLineEdit(groupBox_5);
         lineEdit_28->setObjectName("lineEdit_28");
         lineEdit_28->setGeometry(QRect(170, 100, 131, 31));
-        lineEdit_28->setFont(font1);
+        lineEdit_28->setFont(font2);
         dateEdit_3 = new QDateEdit(groupBox_5);
         dateEdit_3->setObjectName("dateEdit_3");
         dateEdit_3->setGeometry(QRect(170, 220, 131, 31));
@@ -1932,7 +2094,7 @@ public:
         pushButton_19 = new QPushButton(groupBox_5);
         pushButton_19->setObjectName("pushButton_19");
         pushButton_19->setGeometry(QRect(20, 390, 121, 41));
-        pushButton_19->setFont(font4);
+        pushButton_19->setFont(font1);
         pushButton_19->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    /* 1. Base Orange \"Sun\" Background (Gradient for a slight shine) */\n"
 "    background-color: qlineargradient(\n"
@@ -1966,7 +2128,7 @@ public:
         pushButton_25 = new QPushButton(groupBox_5);
         pushButton_25->setObjectName("pushButton_25");
         pushButton_25->setGeometry(QRect(170, 390, 121, 41));
-        pushButton_25->setFont(font4);
+        pushButton_25->setFont(font1);
         pushButton_25->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    /* 1. Base Orange \"Sun\" Background (Gradient for a slight shine) */\n"
 "    background-color: qlineargradient(\n"
@@ -2000,16 +2162,16 @@ public:
         lineEdit_29 = new QLineEdit(groupBox_5);
         lineEdit_29->setObjectName("lineEdit_29");
         lineEdit_29->setGeometry(QRect(170, 270, 131, 41));
-        lineEdit_29->setFont(font1);
+        lineEdit_29->setFont(font2);
         label_35 = new QLabel(groupBox_5);
         label_35->setObjectName("label_35");
         label_35->setGeometry(QRect(0, 330, 111, 41));
-        label_35->setFont(font3);
+        label_35->setFont(font4);
         label_35->setStyleSheet(QString::fromUtf8("font: 700 9pt \"Segoe UI\";"));
         lineEdit_30 = new QLineEdit(groupBox_5);
         lineEdit_30->setObjectName("lineEdit_30");
         lineEdit_30->setGeometry(QRect(170, 330, 131, 41));
-        lineEdit_30->setFont(font1);
+        lineEdit_30->setFont(font2);
         tableWidget_5 = new QTableWidget(tab_9);
         if (tableWidget_5->columnCount() < 6)
             tableWidget_5->setColumnCount(6);
@@ -2033,7 +2195,7 @@ public:
         label_36 = new QLabel(tab_9);
         label_36->setObjectName("label_36");
         label_36->setGeometry(QRect(350, 150, 191, 31));
-        label_36->setFont(font2);
+        label_36->setFont(font3);
         label_36->setStyleSheet(QString::fromUtf8("\n"
 "    background-color: rgba(255, 255, 255, 30); /* Semi-transparent white background */\n"
 "    color: white; /* Text color */\n"
@@ -2044,7 +2206,7 @@ public:
         lineEdit_31 = new QLineEdit(tab_9);
         lineEdit_31->setObjectName("lineEdit_31");
         lineEdit_31->setGeometry(QRect(560, 150, 211, 31));
-        lineEdit_31->setFont(font1);
+        lineEdit_31->setFont(font2);
         lineEdit_31->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    background-color: rgba(255, 255, 255, 30); /* Semi-transparent white background */\n"
 "    color: white; /* Text color */\n"
@@ -2055,7 +2217,7 @@ public:
         label_37 = new QLabel(tab_9);
         label_37->setObjectName("label_37");
         label_37->setGeometry(QRect(810, 150, 91, 31));
-        label_37->setFont(font2);
+        label_37->setFont(font3);
         label_37->setStyleSheet(QString::fromUtf8(" background-color: rgba(255, 255, 255, 30); /* Semi-transparent white background */\n"
 "    color: white; /* Text color */\n"
 "  \n"
@@ -2075,7 +2237,7 @@ public:
         lineEdit_32 = new QLineEdit(tab_9);
         lineEdit_32->setObjectName("lineEdit_32");
         lineEdit_32->setGeometry(QRect(770, 480, 111, 41));
-        lineEdit_32->setFont(font1);
+        lineEdit_32->setFont(font2);
         lineEdit_32->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    background-color: rgba(255, 255, 255, 30); /* Semi-transparent white background */\n"
 "    color: white; /* Text color */\n"
@@ -2398,7 +2560,7 @@ public:
         lineEdit_33 = new QLineEdit(tab_11);
         lineEdit_33->setObjectName("lineEdit_33");
         lineEdit_33->setGeometry(QRect(840, 480, 111, 41));
-        lineEdit_33->setFont(font1);
+        lineEdit_33->setFont(font2);
         lineEdit_33->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    background-color: rgba(255, 255, 255, 30); /* Semi-transparent white background */\n"
 "    color: white; /* Text color */\n"
@@ -2460,6 +2622,7 @@ public:
         label_6->setText(QCoreApplication::translate("Gemploye", "N Tel", nullptr));
         pushButton->setText(QCoreApplication::translate("Gemploye", "Valider", nullptr));
         pushButton_2->setText(QCoreApplication::translate("Gemploye", "Annuler", nullptr));
+        pushButton_11->setText(QCoreApplication::translate("Gemploye", "modifier", nullptr));
         label_14->setText(QCoreApplication::translate("Gemploye", "Trier par", nullptr));
         QTableWidgetItem *___qtablewidgetitem = tableWidget->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QCoreApplication::translate("Gemploye", "Nouvelle colonne", nullptr));
@@ -2480,6 +2643,7 @@ public:
         tabWidget->setTabText(tabWidget->indexOf(tab_4), QCoreApplication::translate("Gemploye", "statistique", nullptr));
         pushButton_12->setText(QCoreApplication::translate("Gemploye", "Recherche", nullptr));
         lineEdit_16->setPlaceholderText(QCoreApplication::translate("Gemploye", "Recherche", nullptr));
+        notificationButton->setText(QCoreApplication::translate("Gemploye", "\360\237\224\224", nullptr));
         pushButton_13->setText(QCoreApplication::translate("Gemploye", "supprimer", nullptr));
         pushButton_23->setText(QCoreApplication::translate("Gemploye", "exporter PDF", nullptr));
         QTableWidgetItem *___qtablewidgetitem5 = tableWidget_2->horizontalHeaderItem(0);
@@ -2495,12 +2659,14 @@ public:
 
         label_44->setText(QString());
         groupBox_6->setTitle(QCoreApplication::translate("Gemploye", "Ajouter/Modifier un projet", nullptr));
+        label_56->setText(QCoreApplication::translate("Gemploye", "code unique", nullptr));
         label_50->setText(QCoreApplication::translate("Gemploye", "titre", nullptr));
         label_51->setText(QCoreApplication::translate("Gemploye", "budget", nullptr));
         label_52->setText(QCoreApplication::translate("Gemploye", "deadline", nullptr));
+        label_qrCodeTitle->setText(QCoreApplication::translate("Gemploye", "QR Code du Projet", nullptr));
+        qrCodeLabel->setText(QCoreApplication::translate("Gemploye", "QR Code", nullptr));
         pushButton_32->setText(QCoreApplication::translate("Gemploye", "Valider", nullptr));
         pushButton_33->setText(QCoreApplication::translate("Gemploye", "Annuler", nullptr));
-        label_56->setText(QCoreApplication::translate("Gemploye", "code unique", nullptr));
         lineEdit_34->setPlaceholderText(QCoreApplication::translate("Gemploye", "Code", nullptr));
         tabWidget_2->setTabText(tabWidget_2->indexOf(tab), QCoreApplication::translate("Gemploye", "Gestion de projet", nullptr));
         tabWidget_2->setTabText(tabWidget_2->indexOf(tab_2), QCoreApplication::translate("Gemploye", "Statistique", nullptr));
