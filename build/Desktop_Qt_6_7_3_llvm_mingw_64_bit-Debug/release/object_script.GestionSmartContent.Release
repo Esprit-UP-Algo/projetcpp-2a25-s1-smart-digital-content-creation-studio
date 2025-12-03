@@ -1,0 +1,11 @@
+release/connection.o
+release/gemploye.o
+release/gestion_contrat.o
+release/gestion_createur.o
+release/gestion_employe.o
+release/gestion_materiel.o
+release/gestion_projet.o
+release/gestion_sponsor.o
+release/main.o
+release/qrc_img.o
+release/moc_gemploye.o

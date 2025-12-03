@@ -24,7 +24,7 @@ bool Connection::createConnect() {
     bool test = false;
     QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
 
-    db.setDatabaseName("Source_Projet2A");  // Data source name (ODBC DSN)
+    db.setDatabaseName("DS_SparkFlow");  // Data source name (ODBC DSN)
     db.setUserName("smart_content");               // Username
     db.setPassword("smart_content123");              // Password
 

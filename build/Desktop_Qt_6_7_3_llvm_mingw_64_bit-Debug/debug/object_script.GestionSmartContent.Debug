@@ -1,0 +1,11 @@
+debug/connection.o
+debug/gemploye.o
+debug/gestion_contrat.o
+debug/gestion_createur.o
+debug/gestion_employe.o
+debug/gestion_materiel.o
+debug/gestion_projet.o
+debug/gestion_sponsor.o
+debug/main.o
+debug/qrc_img.o
+debug/moc_gemploye.o
