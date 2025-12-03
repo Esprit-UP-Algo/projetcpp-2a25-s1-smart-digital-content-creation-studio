@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LoginDialog</class>
+ <widget class="QDialog" name="LoginDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>350</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Connexion</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog {
+    background-color: qlineargradient(
+        x1:0, y1:0, x2:1, y2:1,
+        stop:0 #2a174c,
+        stop:0.5 #3452c9,
+        stop:1 #c7386d
+    );
+}
+
+QLabel {
+    color: white;
+    font-weight: bold;
+}
+
+QLineEdit {
+    background-color: rgba(255, 255, 255, 30);
+    color: white;
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+QPushButton {
+    background-color: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #ff8c00,
+        stop: 1 #ffa500
+    );
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 6px 16px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    border: 2px solid #ffcc00;
+}
+
+QPushButton:pressed {
+    background-color: rgb(0, 170, 127);
+}
+
+QPushButton#btnForgot {
+    background-color: transparent;
+    color: #ffcc00;
+    border: none;
+    text-decoration: underline;
+}
+
+QPushButton#btnForgot:hover {
+    color: #ffffff;
+}
+
+QPushButton#btnFaceID {
+    background-color: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #4CAF50,
+        stop: 1 #45a049
+    );
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 6px 16px;
+    font-weight: bold;
+}
+
+QPushButton#btnFaceID:hover {
+    border: 2px solid #66ff66;
+}
+</string>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout">
+   <item>
+    <widget class="QLabel" name="labelLogo">
+     <property name="minimumSize">
+      <size>
+       <width>250</width>
+       <height>250</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">image: url(:/images/logo.png);
+background-color: transparent;
+background-position: center;
+background-repeat: no-repeat;</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="rightWidget">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="labelIdentifiant">
+        <property name="text">
+         <string>email</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEmail"/>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelMdp">
+        <property name="text">
+         <string>mot de passe</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="linePassword">
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayoutForgot">
+        <item>
+         <widget class="QPushButton" name="btnForgot">
+          <property name="text">
+           <string>Mot de passe oublié ?</string>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayoutButtons">
+        <item>
+         <spacer name="horizontalSpacer2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnCancel">
+          <property name="text">
+           <string>Annuler</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnLogin">
+          <property name="text">
+           <string>Se connecter</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnFaceID">
+        <property name="text">
+         <string>📸 Face ID</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

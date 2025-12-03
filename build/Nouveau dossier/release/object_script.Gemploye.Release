@@ -1,0 +1,16 @@
+release/connection.o
+release/employe.o
+release/main.o
+release/gemploye.o
+release/logindialog.o
+release/arduino.o
+release/projet.o
+release/qrcodegenerator.o
+release/qrcodescanner.o
+release/gprojet.o
+release/qrc_img.o
+release/moc_gemploye.o
+release/moc_logindialog.o
+release/moc_qrcodegenerator.o
+release/moc_qrcodescanner.o
+release/moc_gprojet.o
