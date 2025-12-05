@@ -1,23 +1,28 @@
-#include "gemploye.h"
 #include <QApplication>
-#include <QMessageBox>
+#include "gemploye.h"
 #include "connection.h"
+#include <QMessageBox>
 
-int main(int argc, char *argv[])
+// ⚠️ IMPORTANT: int main(int argc, char *argv[])
+// ⚠️ PAS: int qMain(int argc, char *argv[])
+// ⚠️ PAS: int qmain(int argc, char *argv[])
+
+int qMain(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
+    QApplication app(argc, argv);
 
+    // Création de la connexion à la base
     Connection* c = Connection::instance();
     bool test = c->createConnect();
 
     if(!test)
     {
-        QMessageBox::critical(nullptr, "Database is not open", "Connection failed.\nClick Cancel to exit.", QMessageBox::Cancel);
+        QMessageBox::critical(nullptr, "Database Error", "Connection failed!", QMessageBox::Cancel);
         return -1;
     }
 
-    Gemploye w;
-    w.show();
+    Gemploye window;
+    window.show();
 
-    return a.exec();
+    return app.exec();
 }

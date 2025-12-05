@@ -3,12 +3,13 @@
 
 #include <QMainWindow>
 #include <QMessageBox>
+#include <QTableWidget>
+
 #include "materiel.h"
 #include "employe.h"
 #include "createur.h"
+
 #include <QtCharts/QChartView>
-#include <QtCharts/QPieSeries>
-#include <QtCharts/QPieSlice>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Gemploye; }
@@ -17,12 +18,13 @@ QT_END_NAMESPACE
 class Gemploye : public QMainWindow
 {
     Q_OBJECT
+
 public:
-    Gemploye(QWidget *parent = nullptr);
+    explicit Gemploye(QWidget *parent = nullptr);
     ~Gemploye();
 
 private slots:
-    // Navigation
+    // Navigation entre les pages
     void on_Employ_clicked();
     void on_Employ_4_clicked();
     void on_Employ_2_clicked();
@@ -31,37 +33,46 @@ private slots:
     void on_Employ_5_clicked();
 
     // Employe
-    void on_pushButton_clicked();                 // Ajouter
+    void on_pushButton_clicked();                    // ajouter employé
     void on_tableWidget_cellClicked(int row, int column);
-    void on_pushButton_20_clicked();              // Modifier
-    void on_pushButton_2_clicked();               // Supprimer
+    void on_pushButton_20_clicked();                 // modifier employé
+    void on_pushButton_2_clicked();                  // supprimer employé
 
     // Materiel
-    void on_pushButton_8_clicked();   // Ajouter
-    void on_pushButton_11_clicked();  // Modifier
-    void on_pushButton_9_clicked();   // Supprimer
+    void on_pushButton_8_clicked();                  // ajouter matériel
     void on_tableWidget_6_cellClicked(int row, int column);
+    void on_pushButton_11_clicked();                 // modifier matériel
+    void on_pushButton_9_clicked();                  // supprimer matériel
 
     // Createur
-    void on_pushButton_19_clicked();
-    void on_pushButton_25_clicked();
-    void on_pushButton_21_clicked();
-    void on_tableWidget_5_cellClicked(int row, int column);
-    void on_lineEdit_31_textChanged(const QString& text);
-    void on_comboBox_6_currentIndexChanged(int index);
+    void on_pushButton_19_clicked();                 // ajouter / modifier créateur
+    void on_pushButton_25_clicked();                 // supprimer créateur
+    void on_pushButton_22_clicked();                 // générer PDF affectation + ajouter à l'historique
+    void on_pushButton_24_clicked();                 // générer PDF de l'historique (tableWidget_7)
+    void on_pushButton_26_clicked();                 // paiement Stripe
+
+    void on_tableWidget_5_cellClicked(int row, int column);  // sélection créateur
+    void on_lineEdit_31_textChanged(const QString &text);    // recherche
+    void on_comboBox_6_currentIndexChanged(int index);       // tri
 
 private:
     Ui::Gemploye *ui;
+
+    // Materiel
     Materiel Mtmp;
-    QString selectedReference; // pour materiel
-    QString selectedCin;       // pour employe
-    int selectedCreateurId;    // pour createur
+    QString selectedReference;
+
+    // Employe
+    QString selectedCin;
+
+    // Createur
+    int selectedCreateurId;
     QChartView *createurChartView;
 
+    // Helpers Createur
     void clearCreateurForm();
     void refreshCreateurTable();
     void updateCreateurStats();
-    void exportCreateurToPDF();
 };
 
 #endif // GEMPLOYE_H

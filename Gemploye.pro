@@ -1,30 +1,22 @@
-QT       += core gui sql charts
+# Modules Qt utilisés
+QT       += core gui widgets sql printsupport network charts
+CONFIG   += c++17
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+SOURCES += main.cpp \
+           createur.cpp \
+           employee.cpp \
+           gemploye.cpp \
+           materiel.cpp \
+           connection.cpp   # <- add this
 
-CONFIG += c++17
+HEADERS += createur.h \
+           employee.h \
+           gemploye.h \
+           materiel.h \
+           connection.h     # <- add this
 
-SOURCES += \
-    connection.cpp \
-    employe.cpp \
-    main.cpp \
-    gemploye.cpp \
-    materiel.cpp \
-    createur.cpp
+FORMS += gemploye.ui
 
-HEADERS += \
-    connection.h \
-    employe.h \
-    gemploye.h \
-    materiel.h \
-    createur.h
-
-FORMS += \
-    gemploye.ui
-
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
     img.qrc

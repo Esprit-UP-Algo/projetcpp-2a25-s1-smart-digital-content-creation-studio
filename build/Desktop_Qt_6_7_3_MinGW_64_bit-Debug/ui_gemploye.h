@@ -156,7 +156,6 @@ public:
     QWidget *page_5;
     QTabWidget *Widget;
     QWidget *tab_9;
-    QPushButton *pushButton_21;
     QLabel *label_47;
     QGroupBox *groupBox_5;
     QLineEdit *lineEdit_12;
@@ -170,9 +169,15 @@ public:
     QDateEdit *dateEdit_3;
     QPushButton *pushButton_19;
     QPushButton *pushButton_25;
-    QLineEdit *lineEdit_29;
     QLabel *label_35;
     QLineEdit *lineEdit_30;
+    QLabel *label_38;
+    QLineEdit *lineEdit_32;
+    QComboBox *comboBox_8;
+    QLabel *label_39;
+    QLineEdit *lineEdit_35;
+    QLabel *label_40;
+    QLineEdit *lineEdit_37;
     QTableWidget *tableWidget_5;
     QLabel *label_36;
     QLineEdit *lineEdit_31;
@@ -180,6 +185,11 @@ public:
     QComboBox *comboBox_6;
     QWidget *tab_10;
     QWidget *widget_4;
+    QWidget *tab_13;
+    QPushButton *pushButton_22;
+    QTableWidget *tableWidget_7;
+    QPushButton *pushButton_24;
+    QPushButton *pushButton_26;
     QWidget *page_6;
     QTabWidget *tabWidget_5;
     QWidget *tab_11;
@@ -206,6 +216,7 @@ public:
     QLineEdit *lineEdit_33;
     QWidget *tab_12;
     QWidget *widget_5;
+    QComboBox *comboBox_createur;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -1786,7 +1797,7 @@ public:
         page_5->setObjectName("page_5");
         Widget = new QTabWidget(page_5);
         Widget->setObjectName("Widget");
-        Widget->setGeometry(QRect(0, 10, 1151, 601));
+        Widget->setGeometry(QRect(0, 10, 1151, 641));
         Widget->setFont(font);
         Widget->setStyleSheet(QString::fromUtf8("/* Style for the QTabWidget (the container) */\n"
 "QTabWidget::pane {\n"
@@ -1826,39 +1837,6 @@ public:
 "}"));
         tab_9 = new QWidget();
         tab_9->setObjectName("tab_9");
-        pushButton_21 = new QPushButton(tab_9);
-        pushButton_21->setObjectName("pushButton_21");
-        pushButton_21->setGeometry(QRect(400, 480, 181, 41));
-        pushButton_21->setStyleSheet(QString::fromUtf8("QPushButton {\n"
-"    /* 1. Base Orange \"Sun\" Background (Gradient for a slight shine) */\n"
-"    background-color: qlineargradient(\n"
-"        x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"        stop: 0 #ff8c00,   /* Darker orange at the top */\n"
-"        stop: 1 #ffa500    /* Lighter orange at the bottom */\n"
-"    );\n"
-"    color:white; /* White text for contrast */\n"
-"    border: 2px solid transparent; /* Transparent border initially */\n"
-"    border-radius: 8px;\n"
-"    padding: 10px 20px;\n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    /* 2. Bright Contour (Border) when the mouse passes over */\n"
-"    border: 2px solid #ffcc00; /* Bright yellow border (the glow) */\n"
-"    background-color: qlineargradient(\n"
-"        x1: 0, y1: 0, x2: 0, y2: 1,\n"
-"        stop: 0 #ff951a,   /* Slightly brighter background on hover */\n"
-"        stop: 1 #ffb01a\n"
-"    );\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"    /* 3. Darker press effect */\n"
-"    background-color: #e67e22; /* Solid darker orang"
-                        "e */\n"
-"    border: 2px solid #ffcc00;\n"
-"}"));
         label_47 = new QLabel(tab_9);
         label_47->setObjectName("label_47");
         label_47->setGeometry(QRect(940, -10, 181, 131));
@@ -1867,7 +1845,7 @@ public:
 ""));
         groupBox_5 = new QGroupBox(tab_9);
         groupBox_5->setObjectName("groupBox_5");
-        groupBox_5->setGeometry(QRect(10, 30, 321, 481));
+        groupBox_5->setGeometry(QRect(10, 30, 321, 571));
         groupBox_5->setFont(font2);
         groupBox_5->setStyleSheet(QString::fromUtf8("background-color: white; /* White background for the active tab */\n"
 "    color: black; /* Black text for the active tab */\n"
@@ -1890,12 +1868,12 @@ public:
         lineEdit_12->setFont(font1);
         label_30 = new QLabel(groupBox_5);
         label_30->setObjectName("label_30");
-        label_30->setGeometry(QRect(0, 100, 71, 31));
+        label_30->setGeometry(QRect(0, 100, 121, 31));
         label_30->setFont(font3);
         label_30->setStyleSheet(QString::fromUtf8("font: 700 9pt \"Segoe UI\";"));
         label_31 = new QLabel(groupBox_5);
         label_31->setObjectName("label_31");
-        label_31->setGeometry(QRect(0, 150, 131, 41));
+        label_31->setGeometry(QRect(0, 150, 121, 41));
         label_31->setFont(font3);
         label_31->setStyleSheet(QString::fromUtf8("font: 700 9pt \"Segoe UI\";"));
         label_32 = new QLabel(groupBox_5);
@@ -1905,7 +1883,7 @@ public:
         label_32->setStyleSheet(QString::fromUtf8("font: 700 9pt \"Segoe UI\";"));
         label_33 = new QLabel(groupBox_5);
         label_33->setObjectName("label_33");
-        label_33->setGeometry(QRect(0, 270, 111, 41));
+        label_33->setGeometry(QRect(0, 270, 121, 41));
         label_33->setFont(font3);
         label_33->setStyleSheet(QString::fromUtf8("font: 700 9pt \"Segoe UI\";"));
         label_34 = new QLabel(groupBox_5);
@@ -1931,7 +1909,7 @@ public:
 "    padding: 5px; /* Adds space inside the widget for text, so it's not right up against the edges *"));
         pushButton_19 = new QPushButton(groupBox_5);
         pushButton_19->setObjectName("pushButton_19");
-        pushButton_19->setGeometry(QRect(20, 390, 121, 41));
+        pushButton_19->setGeometry(QRect(0, 530, 121, 41));
         pushButton_19->setFont(font4);
         pushButton_19->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    /* 1. Base Orange \"Sun\" Background (Gradient for a slight shine) */\n"
@@ -1965,7 +1943,7 @@ public:
 "}"));
         pushButton_25 = new QPushButton(groupBox_5);
         pushButton_25->setObjectName("pushButton_25");
-        pushButton_25->setGeometry(QRect(170, 390, 121, 41));
+        pushButton_25->setGeometry(QRect(180, 530, 121, 41));
         pushButton_25->setFont(font4);
         pushButton_25->setStyleSheet(QString::fromUtf8("QPushButton {\n"
 "    /* 1. Base Orange \"Sun\" Background (Gradient for a slight shine) */\n"
@@ -1997,23 +1975,108 @@ public:
                         "rker orange */\n"
 "    border: 2px solid #ffcc00;\n"
 "}"));
-        lineEdit_29 = new QLineEdit(groupBox_5);
-        lineEdit_29->setObjectName("lineEdit_29");
-        lineEdit_29->setGeometry(QRect(170, 270, 131, 41));
-        lineEdit_29->setFont(font1);
         label_35 = new QLabel(groupBox_5);
         label_35->setObjectName("label_35");
-        label_35->setGeometry(QRect(0, 330, 111, 41));
+        label_35->setGeometry(QRect(0, 330, 121, 41));
         label_35->setFont(font3);
         label_35->setStyleSheet(QString::fromUtf8("font: 700 9pt \"Segoe UI\";"));
         lineEdit_30 = new QLineEdit(groupBox_5);
         lineEdit_30->setObjectName("lineEdit_30");
         lineEdit_30->setGeometry(QRect(170, 330, 131, 41));
         lineEdit_30->setFont(font1);
+        label_38 = new QLabel(groupBox_5);
+        label_38->setObjectName("label_38");
+        label_38->setGeometry(QRect(0, 430, 121, 41));
+        label_38->setFont(font3);
+        label_38->setStyleSheet(QString::fromUtf8("font: 700 9pt \"Segoe UI\";"));
+        lineEdit_32 = new QLineEdit(groupBox_5);
+        lineEdit_32->setObjectName("lineEdit_32");
+        lineEdit_32->setGeometry(QRect(170, 430, 131, 41));
+        lineEdit_32->setFont(font1);
+        comboBox_8 = new QComboBox(groupBox_5);
+        comboBox_8->addItem(QString());
+        comboBox_8->addItem(QString());
+        comboBox_8->addItem(QString());
+        comboBox_8->addItem(QString());
+        comboBox_8->addItem(QString());
+        comboBox_8->addItem(QString());
+        comboBox_8->addItem(QString());
+        comboBox_8->addItem(QString());
+        comboBox_8->addItem(QString());
+        comboBox_8->addItem(QString());
+        comboBox_8->addItem(QString());
+        comboBox_8->addItem(QString());
+        comboBox_8->addItem(QString());
+        comboBox_8->setObjectName("comboBox_8");
+        comboBox_8->setGeometry(QRect(150, 280, 162, 31));
+        comboBox_8->setStyleSheet(QString::fromUtf8("QComboBox {\n"
+"    background-color: rgba(255, 255, 255, 30);\n"
+"    color: white;\n"
+"    border: 1px solid white;\n"
+"    border-radius: 8px;\n"
+"    padding: 5px;\n"
+"    min-width: 150px;\n"
+"}\n"
+"QComboBox::drop-down {\n"
+"    border: none;\n"
+"    width: 20px;\n"
+"}\n"
+"QComboBox::down-arrow {\n"
+"    image: none;\n"
+"    border-left: 4px solid transparent;\n"
+"    border-right: 4px solid transparent;\n"
+"    border-top: 6px solid white;\n"
+"    margin-right: 5px;\n"
+"}\n"
+"QComboBox QAbstractItemView {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"    border: 1px solid #c4c4c4;\n"
+"    border-radius: 8px;\n"
+"    selection-background-color: #ff8c00;\n"
+"    selection-color: white;\n"
+"    padding: 5px;\n"
+"    min-width: 180px;\n"
+"}\n"
+"QComboBox QAbstractItemView::item {\n"
+"    padding: 8px;\n"
+"    border-radius: 4px;\n"
+"}\n"
+"QComboBox QAbstractItemView::item:hover {\n"
+"    background-color: #ffa500;\n"
+"    color: white;\n"
+"}\n"
+"QComboBox QAbstractItemView::item:selected {\n"
+""
+                        "    background-color: #ff8c00;\n"
+"    color: white;\n"
+"}"));
+        label_39 = new QLabel(groupBox_5);
+        label_39->setObjectName("label_39");
+        label_39->setGeometry(QRect(0, 480, 121, 41));
+        label_39->setFont(font3);
+        label_39->setStyleSheet(QString::fromUtf8("font: 700 9pt \"Segoe UI\";"));
+        lineEdit_35 = new QLineEdit(groupBox_5);
+        lineEdit_35->setObjectName("lineEdit_35");
+        lineEdit_35->setGeometry(QRect(170, 480, 131, 41));
+        lineEdit_35->setFont(font1);
+        label_40 = new QLabel(groupBox_5);
+        label_40->setObjectName("label_40");
+        label_40->setGeometry(QRect(0, 380, 121, 41));
+        label_40->setFont(font3);
+        label_40->setStyleSheet(QString::fromUtf8("font: 700 9pt \"Segoe UI\";"));
+        lineEdit_37 = new QLineEdit(groupBox_5);
+        lineEdit_37->setObjectName("lineEdit_37");
+        lineEdit_37->setGeometry(QRect(170, 380, 131, 41));
+        lineEdit_37->setFont(font1);
         tableWidget_5 = new QTableWidget(tab_9);
-        if (tableWidget_5->columnCount() < 6)
-            tableWidget_5->setColumnCount(6);
+        if (tableWidget_5->columnCount() < 13)
+            tableWidget_5->setColumnCount(13);
+        QFont font5;
+        font5.setPointSize(9);
+        font5.setWeight(QFont::Thin);
         QTableWidgetItem *__qtablewidgetitem18 = new QTableWidgetItem();
+        __qtablewidgetitem18->setFont(font5);
         tableWidget_5->setHorizontalHeaderItem(0, __qtablewidgetitem18);
         QTableWidgetItem *__qtablewidgetitem19 = new QTableWidgetItem();
         tableWidget_5->setHorizontalHeaderItem(1, __qtablewidgetitem19);
@@ -2025,14 +2088,27 @@ public:
         tableWidget_5->setHorizontalHeaderItem(4, __qtablewidgetitem22);
         QTableWidgetItem *__qtablewidgetitem23 = new QTableWidgetItem();
         tableWidget_5->setHorizontalHeaderItem(5, __qtablewidgetitem23);
+        QTableWidgetItem *__qtablewidgetitem24 = new QTableWidgetItem();
+        tableWidget_5->setHorizontalHeaderItem(6, __qtablewidgetitem24);
+        QTableWidgetItem *__qtablewidgetitem25 = new QTableWidgetItem();
+        tableWidget_5->setHorizontalHeaderItem(7, __qtablewidgetitem25);
+        QTableWidgetItem *__qtablewidgetitem26 = new QTableWidgetItem();
+        tableWidget_5->setHorizontalHeaderItem(8, __qtablewidgetitem26);
+        QTableWidgetItem *__qtablewidgetitem27 = new QTableWidgetItem();
+        tableWidget_5->setHorizontalHeaderItem(9, __qtablewidgetitem27);
+        QTableWidgetItem *__qtablewidgetitem28 = new QTableWidgetItem();
+        tableWidget_5->setHorizontalHeaderItem(10, __qtablewidgetitem28);
+        QTableWidgetItem *__qtablewidgetitem29 = new QTableWidgetItem();
+        tableWidget_5->setHorizontalHeaderItem(11, __qtablewidgetitem29);
         tableWidget_5->setObjectName("tableWidget_5");
-        tableWidget_5->setGeometry(QRect(350, 210, 611, 261));
+        tableWidget_5->setGeometry(QRect(340, 180, 801, 351));
         tableWidget_5->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);\n"
 "color: black;\n"
 ""));
+        tableWidget_5->setColumnCount(13);
         label_36 = new QLabel(tab_9);
         label_36->setObjectName("label_36");
-        label_36->setGeometry(QRect(350, 150, 191, 31));
+        label_36->setGeometry(QRect(350, 140, 191, 31));
         label_36->setFont(font2);
         label_36->setStyleSheet(QString::fromUtf8("\n"
 "    background-color: rgba(255, 255, 255, 30); /* Semi-transparent white background */\n"
@@ -2043,7 +2119,7 @@ public:
 ""));
         lineEdit_31 = new QLineEdit(tab_9);
         lineEdit_31->setObjectName("lineEdit_31");
-        lineEdit_31->setGeometry(QRect(560, 150, 211, 31));
+        lineEdit_31->setGeometry(QRect(560, 140, 211, 31));
         lineEdit_31->setFont(font1);
         lineEdit_31->setStyleSheet(QString::fromUtf8("QLineEdit {\n"
 "    background-color: rgba(255, 255, 255, 30); /* Semi-transparent white background */\n"
@@ -2054,7 +2130,7 @@ public:
 "}"));
         label_37 = new QLabel(tab_9);
         label_37->setObjectName("label_37");
-        label_37->setGeometry(QRect(810, 150, 91, 31));
+        label_37->setGeometry(QRect(810, 140, 91, 31));
         label_37->setFont(font2);
         label_37->setStyleSheet(QString::fromUtf8(" background-color: rgba(255, 255, 255, 30); /* Semi-transparent white background */\n"
 "    color: white; /* Text color */\n"
@@ -2065,8 +2141,13 @@ public:
         comboBox_6 = new QComboBox(tab_9);
         comboBox_6->addItem(QString());
         comboBox_6->addItem(QString());
+        comboBox_6->addItem(QString());
+        comboBox_6->addItem(QString());
+        comboBox_6->addItem(QString());
+        comboBox_6->addItem(QString());
+        comboBox_6->addItem(QString());
         comboBox_6->setObjectName("comboBox_6");
-        comboBox_6->setGeometry(QRect(930, 150, 162, 31));
+        comboBox_6->setGeometry(QRect(930, 140, 162, 31));
         comboBox_6->setStyleSheet(QString::fromUtf8("QComboBox {\n"
 "    background-color: rgba(255, 255, 255, 30);\n"
 "    color: white;\n"
@@ -2117,6 +2198,117 @@ public:
         widget_4->setGeometry(QRect(90, 10, 881, 471));
         widget_4->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         Widget->addTab(tab_10, QString());
+        tab_13 = new QWidget();
+        tab_13->setObjectName("tab_13");
+        pushButton_22 = new QPushButton(tab_13);
+        pushButton_22->setObjectName("pushButton_22");
+        pushButton_22->setGeometry(QRect(220, 430, 121, 41));
+        pushButton_22->setFont(font4);
+        pushButton_22->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    /* 1. Base Orange \"Sun\" Background (Gradient for a slight shine) */\n"
+"    background-color: qlineargradient(\n"
+"        x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"        stop: 0 #ff8c00,   /* Darker orange at the top */\n"
+"        stop: 1 #ffa500    /* Lighter orange at the bottom */\n"
+"    );\n"
+"    color: white; /* White text for contrast */\n"
+"    border: 2px solid transparent; /* Transparent border initially */\n"
+"    border-radius: 8px;\n"
+"    padding: 10px 20px;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    /* 2. Bright Contour (Border) when the mouse passes over */\n"
+"    border: 2px solid #ffcc00; /* Bright yellow border (the glow) */\n"
+"    background-color: qlineargradient(\n"
+"        x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"        stop: 0 #ff951a,   /* Slightly brighter background on hover */\n"
+"        stop: 1 #ffb01a\n"
+"    );\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    /* 3. Darker press effect */\n"
+"    background-color: rgb(0, 170, 127); /* Solid da"
+                        "rker orange */\n"
+"    border: 2px solid #ffcc00;\n"
+"}"));
+        tableWidget_7 = new QTableWidget(tab_13);
+        tableWidget_7->setObjectName("tableWidget_7");
+        tableWidget_7->setGeometry(QRect(130, 60, 871, 311));
+        tableWidget_7->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);\n"
+"color: black;\n"
+""));
+        pushButton_24 = new QPushButton(tab_13);
+        pushButton_24->setObjectName("pushButton_24");
+        pushButton_24->setGeometry(QRect(360, 430, 161, 41));
+        pushButton_24->setFont(font4);
+        pushButton_24->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    /* 1. Base Orange \"Sun\" Background (Gradient for a slight shine) */\n"
+"    background-color: qlineargradient(\n"
+"        x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"        stop: 0 #ff8c00,   /* Darker orange at the top */\n"
+"        stop: 1 #ffa500    /* Lighter orange at the bottom */\n"
+"    );\n"
+"    color: white; /* White text for contrast */\n"
+"    border: 2px solid transparent; /* Transparent border initially */\n"
+"    border-radius: 8px;\n"
+"    padding: 10px 20px;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    /* 2. Bright Contour (Border) when the mouse passes over */\n"
+"    border: 2px solid #ffcc00; /* Bright yellow border (the glow) */\n"
+"    background-color: qlineargradient(\n"
+"        x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"        stop: 0 #ff951a,   /* Slightly brighter background on hover */\n"
+"        stop: 1 #ffb01a\n"
+"    );\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    /* 3. Darker press effect */\n"
+"    background-color: rgb(0, 170, 127); /* Solid da"
+                        "rker orange */\n"
+"    border: 2px solid #ffcc00;\n"
+"}"));
+        pushButton_26 = new QPushButton(tab_13);
+        pushButton_26->setObjectName("pushButton_26");
+        pushButton_26->setGeometry(QRect(220, 490, 371, 41));
+        pushButton_26->setFont(font4);
+        pushButton_26->setStyleSheet(QString::fromUtf8("QPushButton {\n"
+"    /* 1. Base Orange \"Sun\" Background (Gradient for a slight shine) */\n"
+"    background-color: qlineargradient(\n"
+"        x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"        stop: 0 #ff8c00,   /* Darker orange at the top */\n"
+"        stop: 1 #ffa500    /* Lighter orange at the bottom */\n"
+"    );\n"
+"    color: white; /* White text for contrast */\n"
+"    border: 2px solid transparent; /* Transparent border initially */\n"
+"    border-radius: 8px;\n"
+"    padding: 10px 20px;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    /* 2. Bright Contour (Border) when the mouse passes over */\n"
+"    border: 2px solid #ffcc00; /* Bright yellow border (the glow) */\n"
+"    background-color: qlineargradient(\n"
+"        x1: 0, y1: 0, x2: 0, y2: 1,\n"
+"        stop: 0 #ff951a,   /* Slightly brighter background on hover */\n"
+"        stop: 1 #ffb01a\n"
+"    );\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    /* 3. Darker press effect */\n"
+"    background-color: rgb(0, 170, 127); /* Solid da"
+                        "rker orange */\n"
+"    border: 2px solid #ffcc00;\n"
+"}"));
+        Widget->addTab(tab_13, QString());
         stackedWidget->addWidget(page_5);
         page_6 = new QWidget();
         page_6->setObjectName("page_6");
@@ -2434,16 +2626,16 @@ public:
         tableWidget_6 = new QTableWidget(tab_11);
         if (tableWidget_6->columnCount() < 5)
             tableWidget_6->setColumnCount(5);
-        QTableWidgetItem *__qtablewidgetitem24 = new QTableWidgetItem();
-        tableWidget_6->setHorizontalHeaderItem(0, __qtablewidgetitem24);
-        QTableWidgetItem *__qtablewidgetitem25 = new QTableWidgetItem();
-        tableWidget_6->setHorizontalHeaderItem(1, __qtablewidgetitem25);
-        QTableWidgetItem *__qtablewidgetitem26 = new QTableWidgetItem();
-        tableWidget_6->setHorizontalHeaderItem(2, __qtablewidgetitem26);
-        QTableWidgetItem *__qtablewidgetitem27 = new QTableWidgetItem();
-        tableWidget_6->setHorizontalHeaderItem(3, __qtablewidgetitem27);
-        QTableWidgetItem *__qtablewidgetitem28 = new QTableWidgetItem();
-        tableWidget_6->setHorizontalHeaderItem(4, __qtablewidgetitem28);
+        QTableWidgetItem *__qtablewidgetitem30 = new QTableWidgetItem();
+        tableWidget_6->setHorizontalHeaderItem(0, __qtablewidgetitem30);
+        QTableWidgetItem *__qtablewidgetitem31 = new QTableWidgetItem();
+        tableWidget_6->setHorizontalHeaderItem(1, __qtablewidgetitem31);
+        QTableWidgetItem *__qtablewidgetitem32 = new QTableWidgetItem();
+        tableWidget_6->setHorizontalHeaderItem(2, __qtablewidgetitem32);
+        QTableWidgetItem *__qtablewidgetitem33 = new QTableWidgetItem();
+        tableWidget_6->setHorizontalHeaderItem(3, __qtablewidgetitem33);
+        QTableWidgetItem *__qtablewidgetitem34 = new QTableWidgetItem();
+        tableWidget_6->setHorizontalHeaderItem(4, __qtablewidgetitem34);
         tableWidget_6->setObjectName("tableWidget_6");
         tableWidget_6->setGeometry(QRect(390, 210, 671, 241));
         tableWidget_6->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);\n"
@@ -2469,6 +2661,55 @@ public:
         widget_5->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 255, 255);"));
         tabWidget_5->addTab(tab_12, QString());
         stackedWidget->addWidget(page_6);
+        comboBox_createur = new QComboBox(centralwidget);
+        comboBox_createur->addItem(QString());
+        comboBox_createur->addItem(QString());
+        comboBox_createur->addItem(QString());
+        comboBox_createur->addItem(QString());
+        comboBox_createur->setObjectName("comboBox_createur");
+        comboBox_createur->setGeometry(QRect(680, 670, 162, 31));
+        comboBox_createur->setStyleSheet(QString::fromUtf8("QComboBox {\n"
+"    background-color: rgba(255, 255, 255, 30);\n"
+"    color: white;\n"
+"    border: 1px solid white;\n"
+"    border-radius: 8px;\n"
+"    padding: 5px;\n"
+"    min-width: 150px;\n"
+"}\n"
+"QComboBox::drop-down {\n"
+"    border: none;\n"
+"    width: 20px;\n"
+"}\n"
+"QComboBox::down-arrow {\n"
+"    image: none;\n"
+"    border-left: 4px solid transparent;\n"
+"    border-right: 4px solid transparent;\n"
+"    border-top: 6px solid white;\n"
+"    margin-right: 5px;\n"
+"}\n"
+"QComboBox QAbstractItemView {\n"
+"    background-color: white;\n"
+"    color: black;\n"
+"    border: 1px solid #c4c4c4;\n"
+"    border-radius: 8px;\n"
+"    selection-background-color: #ff8c00;\n"
+"    selection-color: white;\n"
+"    padding: 5px;\n"
+"    min-width: 180px;\n"
+"}\n"
+"QComboBox QAbstractItemView::item {\n"
+"    padding: 8px;\n"
+"    border-radius: 4px;\n"
+"}\n"
+"QComboBox QAbstractItemView::item:hover {\n"
+"    background-color: #ffa500;\n"
+"    color: white;\n"
+"}\n"
+"QComboBox QAbstractItemView::item:selected {\n"
+""
+                        "    background-color: #ff8c00;\n"
+"    color: white;\n"
+"}"));
         Gemploye->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Gemploye);
         menubar->setObjectName("menubar");
@@ -2485,8 +2726,8 @@ public:
         tabWidget_2->setCurrentIndex(0);
         tabWidget_3->setCurrentIndex(0);
         tabWidget_4->setCurrentIndex(0);
-        Widget->setCurrentIndex(0);
-        tabWidget_5->setCurrentIndex(0);
+        Widget->setCurrentIndex(2);
+        tabWidget_5->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(Gemploye);
@@ -2622,7 +2863,6 @@ public:
         label_46->setText(QString());
         tabWidget_4->setTabText(tabWidget_4->indexOf(tab_7), QCoreApplication::translate("Gemploye", "Gestion des sponsors", nullptr));
         tabWidget_4->setTabText(tabWidget_4->indexOf(tab_8), QCoreApplication::translate("Gemploye", "Statistique", nullptr));
-        pushButton_21->setText(QCoreApplication::translate("Gemploye", "Exporter PDF", nullptr));
         label_47->setText(QString());
         groupBox_5->setTitle(QCoreApplication::translate("Gemploye", "Ajouter/Modifier un cr\303\251ateur", nullptr));
         label_30->setText(QCoreApplication::translate("Gemploye", "nom", nullptr));
@@ -2633,27 +2873,66 @@ public:
         pushButton_19->setText(QCoreApplication::translate("Gemploye", "Valider", nullptr));
         pushButton_25->setText(QCoreApplication::translate("Gemploye", "Annuler", nullptr));
         label_35->setText(QCoreApplication::translate("Gemploye", "abonn\303\251s", nullptr));
+        label_38->setText(QCoreApplication::translate("Gemploye", "projets", nullptr));
+        comboBox_8->setItemText(0, QString());
+        comboBox_8->setItemText(1, QCoreApplication::translate("Gemploye", "Gaming", nullptr));
+        comboBox_8->setItemText(2, QCoreApplication::translate("Gemploye", "Beaut\303\251", nullptr));
+        comboBox_8->setItemText(3, QCoreApplication::translate("Gemploye", "Mode et Lifestyle", nullptr));
+        comboBox_8->setItemText(4, QCoreApplication::translate("Gemploye", "Technologie ", nullptr));
+        comboBox_8->setItemText(5, QCoreApplication::translate("Gemploye", "\303\211ducation et Tutoriels", nullptr));
+        comboBox_8->setItemText(6, QCoreApplication::translate("Gemploye", "Musique", nullptr));
+        comboBox_8->setItemText(7, QCoreApplication::translate("Gemploye", "Photographie et Vid\303\251o", nullptr));
+        comboBox_8->setItemText(8, QCoreApplication::translate("Gemploye", "TikToker", nullptr));
+        comboBox_8->setItemText(9, QCoreApplication::translate("Gemploye", "YouTuber", nullptr));
+        comboBox_8->setItemText(10, QCoreApplication::translate("Gemploye", "Streamer", nullptr));
+        comboBox_8->setItemText(11, QCoreApplication::translate("Gemploye", "autre", nullptr));
+        comboBox_8->setItemText(12, QString());
+
+        comboBox_8->setPlaceholderText(QString());
+        label_39->setText(QCoreApplication::translate("Gemploye", "titre_projets", nullptr));
+        label_40->setText(QCoreApplication::translate("Gemploye", "titre_sponsors", nullptr));
         QTableWidgetItem *___qtablewidgetitem18 = tableWidget_5->horizontalHeaderItem(0);
         ___qtablewidgetitem18->setText(QCoreApplication::translate("Gemploye", "code unique", nullptr));
         QTableWidgetItem *___qtablewidgetitem19 = tableWidget_5->horizontalHeaderItem(1);
-        ___qtablewidgetitem19->setText(QCoreApplication::translate("Gemploye", "nom", nullptr));
+        ___qtablewidgetitem19->setText(QCoreApplication::translate("Gemploye", "createur", nullptr));
         QTableWidgetItem *___qtablewidgetitem20 = tableWidget_5->horizontalHeaderItem(2);
-        ___qtablewidgetitem20->setText(QCoreApplication::translate("Gemploye", "pr\303\251nom", nullptr));
+        ___qtablewidgetitem20->setText(QCoreApplication::translate("Gemploye", "sponsor", nullptr));
         QTableWidgetItem *___qtablewidgetitem21 = tableWidget_5->horizontalHeaderItem(3);
-        ___qtablewidgetitem21->setText(QCoreApplication::translate("Gemploye", "date d'adh\303\251sion", nullptr));
+        ___qtablewidgetitem21->setText(QCoreApplication::translate("Gemploye", "materiel", nullptr));
         QTableWidgetItem *___qtablewidgetitem22 = tableWidget_5->horizontalHeaderItem(4);
-        ___qtablewidgetitem22->setText(QCoreApplication::translate("Gemploye", "abonn\303\251s", nullptr));
+        ___qtablewidgetitem22->setText(QCoreApplication::translate("Gemploye", "nom", nullptr));
         QTableWidgetItem *___qtablewidgetitem23 = tableWidget_5->horizontalHeaderItem(5);
-        ___qtablewidgetitem23->setText(QCoreApplication::translate("Gemploye", "statu", nullptr));
+        ___qtablewidgetitem23->setText(QCoreApplication::translate("Gemploye", "pr\303\251nom", nullptr));
+        QTableWidgetItem *___qtablewidgetitem24 = tableWidget_5->horizontalHeaderItem(6);
+        ___qtablewidgetitem24->setText(QCoreApplication::translate("Gemploye", "projets", nullptr));
+        QTableWidgetItem *___qtablewidgetitem25 = tableWidget_5->horizontalHeaderItem(7);
+        ___qtablewidgetitem25->setText(QCoreApplication::translate("Gemploye", "date d'adh\303\251sion", nullptr));
+        QTableWidgetItem *___qtablewidgetitem26 = tableWidget_5->horizontalHeaderItem(8);
+        ___qtablewidgetitem26->setText(QCoreApplication::translate("Gemploye", "cat\303\251gorie", nullptr));
+        QTableWidgetItem *___qtablewidgetitem27 = tableWidget_5->horizontalHeaderItem(9);
+        ___qtablewidgetitem27->setText(QCoreApplication::translate("Gemploye", "abonn\303\251s", nullptr));
+        QTableWidgetItem *___qtablewidgetitem28 = tableWidget_5->horizontalHeaderItem(10);
+        ___qtablewidgetitem28->setText(QCoreApplication::translate("Gemploye", "t_projet", nullptr));
+        QTableWidgetItem *___qtablewidgetitem29 = tableWidget_5->horizontalHeaderItem(11);
+        ___qtablewidgetitem29->setText(QCoreApplication::translate("Gemploye", "t_sponsor", nullptr));
         label_36->setText(QCoreApplication::translate("Gemploye", "Recherche d'un cr\303\251ateur", nullptr));
-        lineEdit_31->setPlaceholderText(QCoreApplication::translate("Gemploye", "Recherche ", nullptr));
+        lineEdit_31->setPlaceholderText(QCoreApplication::translate("Gemploye", "Recherche par nom/pr\303\251nom", nullptr));
         label_37->setText(QCoreApplication::translate("Gemploye", "Trier par", nullptr));
-        comboBox_6->setItemText(0, QCoreApplication::translate("Gemploye", "actif ", nullptr));
-        comboBox_6->setItemText(1, QCoreApplication::translate("Gemploye", "inactif", nullptr));
+        comboBox_6->setItemText(0, QString());
+        comboBox_6->setItemText(1, QCoreApplication::translate("Gemploye", "nom", nullptr));
+        comboBox_6->setItemText(2, QCoreApplication::translate("Gemploye", "abonn\303\251s", nullptr));
+        comboBox_6->setItemText(3, QCoreApplication::translate("Gemploye", "cat\303\251gorie", nullptr));
+        comboBox_6->setItemText(4, QCoreApplication::translate("Gemploye", "Date d'adh\303\251sion", nullptr));
+        comboBox_6->setItemText(5, QCoreApplication::translate("Gemploye", "code unique", nullptr));
+        comboBox_6->setItemText(6, QString());
 
         comboBox_6->setPlaceholderText(QString());
         Widget->setTabText(Widget->indexOf(tab_9), QCoreApplication::translate("Gemploye", "Gestion des cr\303\251ateurs", nullptr));
         Widget->setTabText(Widget->indexOf(tab_10), QCoreApplication::translate("Gemploye", "statistique", nullptr));
+        pushButton_22->setText(QCoreApplication::translate("Gemploye", "affectation", nullptr));
+        pushButton_24->setText(QCoreApplication::translate("Gemploye", "generer pdf ", nullptr));
+        pushButton_26->setText(QCoreApplication::translate("Gemploye", "paiement", nullptr));
+        Widget->setTabText(Widget->indexOf(tab_13), QCoreApplication::translate("Gemploye", "Affectation", nullptr));
         pushButton_27->setText(QCoreApplication::translate("Gemploye", "Recherche", nullptr));
         lineEdit_36->setPlaceholderText(QCoreApplication::translate("Gemploye", "Recherche par mot-cl\303\251 ou ....", nullptr));
         pushButton_28->setText(QCoreApplication::translate("Gemploye", "annuler", nullptr));
@@ -2674,19 +2953,24 @@ public:
         comboBox_11->setItemText(0, QCoreApplication::translate("Gemploye", "disponible", nullptr));
         comboBox_11->setItemText(1, QCoreApplication::translate("Gemploye", "non disponible", nullptr));
 
-        QTableWidgetItem *___qtablewidgetitem24 = tableWidget_6->horizontalHeaderItem(0);
-        ___qtablewidgetitem24->setText(QCoreApplication::translate("Gemploye", "code unique", nullptr));
-        QTableWidgetItem *___qtablewidgetitem25 = tableWidget_6->horizontalHeaderItem(1);
-        ___qtablewidgetitem25->setText(QCoreApplication::translate("Gemploye", "r\303\251f\303\251rence", nullptr));
-        QTableWidgetItem *___qtablewidgetitem26 = tableWidget_6->horizontalHeaderItem(2);
-        ___qtablewidgetitem26->setText(QCoreApplication::translate("Gemploye", "type d'appareil", nullptr));
-        QTableWidgetItem *___qtablewidgetitem27 = tableWidget_6->horizontalHeaderItem(3);
-        ___qtablewidgetitem27->setText(QCoreApplication::translate("Gemploye", "marque", nullptr));
-        QTableWidgetItem *___qtablewidgetitem28 = tableWidget_6->horizontalHeaderItem(4);
-        ___qtablewidgetitem28->setText(QCoreApplication::translate("Gemploye", "disponibilit\303\251", nullptr));
+        QTableWidgetItem *___qtablewidgetitem30 = tableWidget_6->horizontalHeaderItem(0);
+        ___qtablewidgetitem30->setText(QCoreApplication::translate("Gemploye", "code unique", nullptr));
+        QTableWidgetItem *___qtablewidgetitem31 = tableWidget_6->horizontalHeaderItem(1);
+        ___qtablewidgetitem31->setText(QCoreApplication::translate("Gemploye", "r\303\251f\303\251rence", nullptr));
+        QTableWidgetItem *___qtablewidgetitem32 = tableWidget_6->horizontalHeaderItem(2);
+        ___qtablewidgetitem32->setText(QCoreApplication::translate("Gemploye", "type d'appareil", nullptr));
+        QTableWidgetItem *___qtablewidgetitem33 = tableWidget_6->horizontalHeaderItem(3);
+        ___qtablewidgetitem33->setText(QCoreApplication::translate("Gemploye", "marque", nullptr));
+        QTableWidgetItem *___qtablewidgetitem34 = tableWidget_6->horizontalHeaderItem(4);
+        ___qtablewidgetitem34->setText(QCoreApplication::translate("Gemploye", "disponibilit\303\251", nullptr));
         lineEdit_33->setPlaceholderText(QCoreApplication::translate("Gemploye", "Code", nullptr));
         tabWidget_5->setTabText(tabWidget_5->indexOf(tab_11), QCoreApplication::translate("Gemploye", "Mat\303\251riels", nullptr));
         tabWidget_5->setTabText(tabWidget_5->indexOf(tab_12), QCoreApplication::translate("Gemploye", "Statistique", nullptr));
+        comboBox_createur->setItemText(0, QCoreApplication::translate("Gemploye", "akkari  amen allah", nullptr));
+        comboBox_createur->setItemText(1, QCoreApplication::translate("Gemploye", "akkari ata allah", nullptr));
+        comboBox_createur->setItemText(2, QCoreApplication::translate("Gemploye", "akkari fedi", nullptr));
+        comboBox_createur->setItemText(3, QCoreApplication::translate("Gemploye", "akkari siwarr", nullptr));
+
     } // retranslateUi
 
 };
