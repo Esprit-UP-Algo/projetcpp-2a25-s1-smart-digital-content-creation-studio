@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Gemploye</class>
- <widget class="QMainWindow" name="Gemploye">
+ <class>Gcontrat</class>
+ <widget class="QMainWindow" name="Gcontrat">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -270,16 +270,16 @@ QPushButton:pressed {
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QTabWidget" name="tabWidget">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>20</y>
+        <x>0</x>
+        <y>10</y>
         <width>1151</width>
-        <height>591</height>
+        <height>601</height>
        </rect>
       </property>
       <property name="font">
@@ -356,7 +356,7 @@ QTabBar::tab:!selected:hover {
          <string>Recherche d'un employé</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="supprimer">
+       <widget class="QPushButton" name="pushButton_4">
         <property name="geometry">
          <rect>
           <x>980</x>
@@ -476,7 +476,7 @@ QPushButton:pressed {
           <x>20</x>
           <y>40</y>
           <width>331</width>
-          <height>501</height>
+          <height>451</height>
          </rect>
         </property>
         <property name="font">
@@ -612,7 +612,7 @@ QPushButton:pressed {
           <string>N Tel</string>
          </property>
         </widget>
-        <widget class="QLineEdit" name="linecin">
+        <widget class="QLineEdit" name="lineEdit">
          <property name="geometry">
           <rect>
            <x>150</x>
@@ -622,7 +622,7 @@ QPushButton:pressed {
           </rect>
          </property>
         </widget>
-        <widget class="QLineEdit" name="linenom">
+        <widget class="QLineEdit" name="lineEdit_2">
          <property name="geometry">
           <rect>
            <x>150</x>
@@ -632,7 +632,7 @@ QPushButton:pressed {
           </rect>
          </property>
         </widget>
-        <widget class="QLineEdit" name="lineprenom">
+        <widget class="QLineEdit" name="lineEdit_3">
          <property name="geometry">
           <rect>
            <x>150</x>
@@ -642,7 +642,7 @@ QPushButton:pressed {
           </rect>
          </property>
         </widget>
-        <widget class="QLineEdit" name="lineemail">
+        <widget class="QLineEdit" name="lineEdit_4">
          <property name="geometry">
           <rect>
            <x>150</x>
@@ -652,7 +652,7 @@ QPushButton:pressed {
           </rect>
          </property>
         </widget>
-        <widget class="QLineEdit" name="linemdp">
+        <widget class="QLineEdit" name="lineEdit_5">
          <property name="geometry">
           <rect>
            <x>150</x>
@@ -662,7 +662,7 @@ QPushButton:pressed {
           </rect>
          </property>
         </widget>
-        <widget class="QLineEdit" name="linentel">
+        <widget class="QLineEdit" name="lineEdit_6">
          <property name="geometry">
           <rect>
            <x>150</x>
@@ -672,7 +672,7 @@ QPushButton:pressed {
           </rect>
          </property>
         </widget>
-        <widget class="QPushButton" name="ajouter">
+        <widget class="QPushButton" name="pushButton">
          <property name="geometry">
           <rect>
            <x>20</x>
@@ -715,10 +715,10 @@ QPushButton:pressed {
 </string>
          </property>
          <property name="text">
-          <string>ajouter</string>
+          <string>Valider</string>
          </property>
         </widget>
-        <widget class="QPushButton" name="modifier">
+        <widget class="QPushButton" name="pushButton_2">
          <property name="geometry">
           <rect>
            <x>180</x>
@@ -761,7 +761,7 @@ QPushButton:pressed {
 </string>
          </property>
          <property name="text">
-          <string>modifier</string>
+          <string>Annuler</string>
          </property>
         </widget>
        </widget>
@@ -789,6 +789,46 @@ QPushButton:pressed {
         <property name="text">
          <string>Trier par</string>
         </property>
+       </widget>
+       <widget class="QTableWidget" name="tableWidget">
+        <property name="geometry">
+         <rect>
+          <x>400</x>
+          <y>170</y>
+          <width>691</width>
+          <height>241</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);
+color: black;
+</string>
+        </property>
+        <column>
+         <property name="text">
+          <string>Nouvelle colonne</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Nom</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Prénom</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Cin</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>N Tel</string>
+         </property>
+        </column>
        </widget>
        <widget class="QLineEdit" name="lineEdit_14">
         <property name="geometry">
@@ -860,45 +900,6 @@ background-color: transparent;</string>
           <string>Date d'embauche</string>
          </property>
         </item>
-       </widget>
-       <widget class="QTableView" name="tableemp">
-        <property name="geometry">
-         <rect>
-          <x>395</x>
-          <y>170</y>
-          <width>711</width>
-          <height>261</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QTableView {
-    background-color: #ffffff;
-    alternate-background-color: #f0f0f5;
-    gridline-color: #cfd8dc;
-    selection-background-color: #5e35b1;
-    selection-color: #ffffff;
-    border: 2px solid #5e35b1;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #2b2b2b;  /* ✅ Texte visible sur fond clair */
-}
-
-QHeaderView::section {
-    background-color: #4527a0;
-    color: #ffffff;
-    padding: 6px;
-    border: none;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-QTableCornerButton::section {
-    background-color: #4527a0;
-    border: none;
-}
-</string>
-        </property>
        </widget>
       </widget>
       <widget class="QWidget" name="tab_4">
@@ -1252,7 +1253,7 @@ background-color: transparent;</string>
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>130</y>
+           <y>150</y>
            <width>91</width>
            <height>31</height>
           </rect>
@@ -1270,7 +1271,7 @@ background-color: transparent;</string>
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>190</y>
+           <y>220</y>
            <width>91</width>
            <height>41</height>
           </rect>
@@ -1288,7 +1289,7 @@ background-color: transparent;</string>
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>260</y>
+           <y>300</y>
            <width>111</width>
            <height>31</height>
           </rect>
@@ -1306,7 +1307,7 @@ background-color: transparent;</string>
          <property name="geometry">
           <rect>
            <x>140</x>
-           <y>130</y>
+           <y>150</y>
            <width>161</width>
            <height>31</height>
           </rect>
@@ -1316,7 +1317,7 @@ background-color: transparent;</string>
          <property name="geometry">
           <rect>
            <x>140</x>
-           <y>190</y>
+           <y>220</y>
            <width>161</width>
            <height>41</height>
           </rect>
@@ -1326,7 +1327,7 @@ background-color: transparent;</string>
          <property name="geometry">
           <rect>
            <x>20</x>
-           <y>350</y>
+           <y>390</y>
            <width>121</width>
            <height>41</height>
           </rect>
@@ -1372,7 +1373,7 @@ QPushButton:pressed {
          <property name="geometry">
           <rect>
            <x>180</x>
-           <y>350</y>
+           <y>390</y>
            <width>121</width>
            <height>41</height>
           </rect>
@@ -1446,7 +1447,7 @@ QPushButton:pressed {
          <property name="geometry">
           <rect>
            <x>150</x>
-           <y>260</y>
+           <y>300</y>
            <width>131</width>
            <height>31</height>
           </rect>
@@ -1515,8 +1516,8 @@ QPushButton:pressed {
        <rect>
         <x>0</x>
         <y>10</y>
-        <width>1151</width>
-        <height>591</height>
+        <width>1161</width>
+        <height>621</height>
        </rect>
       </property>
       <property name="font">
@@ -1574,8 +1575,8 @@ QTabBar::tab:!selected:hover {
          <rect>
           <x>10</x>
           <y>10</y>
-          <width>341</width>
-          <height>501</height>
+          <width>351</width>
+          <height>561</height>
          </rect>
         </property>
         <property name="font">
@@ -1609,9 +1610,15 @@ QTabBar::tab:!selected:hover {
           <rect>
            <x>170</x>
            <y>40</y>
-           <width>131</width>
+           <width>171</width>
            <height>41</height>
           </rect>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>171</width>
+           <height>16777215</height>
+          </size>
          </property>
          <property name="font">
           <font>
@@ -1623,8 +1630,8 @@ QTabBar::tab:!selected:hover {
         <widget class="QLabel" name="label_16">
          <property name="geometry">
           <rect>
-           <x>0</x>
-           <y>120</y>
+           <x>10</x>
+           <y>110</y>
            <width>131</width>
            <height>41</height>
           </rect>
@@ -1641,14 +1648,14 @@ QTabBar::tab:!selected:hover {
           <string notr="true">font: 700 9pt &quot;Segoe UI&quot;;</string>
          </property>
          <property name="text">
-          <string>Code unique</string>
+          <string>Code contrat</string>
          </property>
         </widget>
         <widget class="QLabel" name="label_17">
          <property name="geometry">
           <rect>
-           <x>0</x>
-           <y>190</y>
+           <x>20</x>
+           <y>310</y>
            <width>101</width>
            <height>31</height>
           </rect>
@@ -1672,7 +1679,7 @@ QTabBar::tab:!selected:hover {
          <property name="geometry">
           <rect>
            <x>0</x>
-           <y>250</y>
+           <y>360</y>
            <width>161</width>
            <height>41</height>
           </rect>
@@ -1695,8 +1702,8 @@ QTabBar::tab:!selected:hover {
         <widget class="QLabel" name="label_19">
          <property name="geometry">
           <rect>
-           <x>0</x>
-           <y>310</y>
+           <x>20</x>
+           <y>420</y>
            <width>111</width>
            <height>31</height>
           </rect>
@@ -1743,8 +1750,8 @@ QTabBar::tab:!selected:hover {
         <widget class="QLineEdit" name="lineEdit_17">
          <property name="geometry">
           <rect>
-           <x>172</x>
-           <y>115</y>
+           <x>200</x>
+           <y>110</y>
            <width>131</width>
            <height>41</height>
           </rect>
@@ -1759,8 +1766,8 @@ QTabBar::tab:!selected:hover {
         <widget class="QLineEdit" name="lineEdit_18">
          <property name="geometry">
           <rect>
-           <x>170</x>
-           <y>190</y>
+           <x>200</x>
+           <y>310</y>
            <width>131</width>
            <height>31</height>
           </rect>
@@ -1775,8 +1782,8 @@ QTabBar::tab:!selected:hover {
         <widget class="QDateEdit" name="dateEdit">
          <property name="geometry">
           <rect>
-           <x>170</x>
-           <y>260</y>
+           <x>200</x>
+           <y>360</y>
            <width>131</width>
            <height>31</height>
           </rect>
@@ -1792,8 +1799,8 @@ QTabBar::tab:!selected:hover {
         <widget class="QDateEdit" name="dateEdit_2">
          <property name="geometry">
           <rect>
-           <x>170</x>
-           <y>310</y>
+           <x>200</x>
+           <y>420</y>
            <width>131</width>
            <height>31</height>
           </rect>
@@ -1809,8 +1816,8 @@ QTabBar::tab:!selected:hover {
         <widget class="QPushButton" name="pushButton_10">
          <property name="geometry">
           <rect>
-           <x>20</x>
-           <y>390</y>
+           <x>10</x>
+           <y>470</y>
            <width>121</width>
            <height>41</height>
           </rect>
@@ -1853,14 +1860,14 @@ QPushButton:pressed {
 }</string>
          </property>
          <property name="text">
-          <string>Valider</string>
+          <string>Ajouter</string>
          </property>
         </widget>
         <widget class="QPushButton" name="pushButton_14">
          <property name="geometry">
           <rect>
-           <x>170</x>
-           <y>390</y>
+           <x>210</x>
+           <y>470</y>
            <width>121</width>
            <height>41</height>
           </rect>
@@ -1906,11 +1913,141 @@ QPushButton:pressed {
           <string>Annuler</string>
          </property>
         </widget>
+        <widget class="QPushButton" name="pushButton_11">
+         <property name="geometry">
+          <rect>
+           <x>110</x>
+           <y>520</y>
+           <width>121</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton {
+    /* 1. Base Orange &quot;Sun&quot; Background (Gradient for a slight shine) */
+    background-color: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #ff8c00,   /* Darker orange at the top */
+        stop: 1 #ffa500    /* Lighter orange at the bottom */
+    );
+    color: white; /* White text for contrast */
+    border: 2px solid transparent; /* Transparent border initially */
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+QPushButton:hover {
+    /* 2. Bright Contour (Border) when the mouse passes over */
+    border: 2px solid #ffcc00; /* Bright yellow border (the glow) */
+    background-color: qlineargradient(
+        x1: 0, y1: 0, x2: 0, y2: 1,
+        stop: 0 #ff951a,   /* Slightly brighter background on hover */
+        stop: 1 #ffb01a
+    );
+}
+
+QPushButton:pressed {
+    /* 3. Darker press effect */
+    background-color: rgb(0, 170, 127); /* Solid darker orange */
+    border: 2px solid #ffcc00;
+}</string>
+         </property>
+         <property name="text">
+          <string>Modifier</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_38">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>180</y>
+           <width>131</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <pointsize>9</pointsize>
+           <italic>false</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 700 9pt &quot;Segoe UI&quot;;</string>
+         </property>
+         <property name="text">
+          <string>Code sponsor</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_39">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>250</y>
+           <width>131</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Segoe UI</family>
+           <pointsize>9</pointsize>
+           <italic>false</italic>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 700 9pt &quot;Segoe UI&quot;;</string>
+         </property>
+         <property name="text">
+          <string>Code createur</string>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_35">
+         <property name="geometry">
+          <rect>
+           <x>200</x>
+           <y>180</y>
+           <width>131</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="lineEdit_37">
+         <property name="geometry">
+          <rect>
+           <x>200</x>
+           <y>250</y>
+           <width>131</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+        </widget>
        </widget>
        <widget class="QLabel" name="label_21">
         <property name="geometry">
          <rect>
-          <x>360</x>
+          <x>380</x>
           <y>130</y>
           <width>191</width>
           <height>31</height>
@@ -1940,7 +2077,7 @@ QPushButton:pressed {
          <rect>
           <x>830</x>
           <y>130</y>
-          <width>91</width>
+          <width>141</width>
           <height>31</height>
          </rect>
         </property>
@@ -1965,7 +2102,7 @@ QPushButton:pressed {
        <widget class="QComboBox" name="comboBox_3">
         <property name="geometry">
          <rect>
-          <x>960</x>
+          <x>980</x>
           <y>130</y>
           <width>111</width>
           <height>31</height>
@@ -1979,21 +2116,16 @@ QPushButton:pressed {
     padding: 5px; /* Adds space inside the widget for text, so it's not right up against the edges */</string>
         </property>
         <property name="placeholderText">
-         <string>Etat</string>
+         <string>Prix</string>
         </property>
         <item>
          <property name="text">
-          <string>En cours</string>
+          <string>Prix croissant</string>
          </property>
         </item>
         <item>
          <property name="text">
-          <string>Signé</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>Expiré</string>
+          <string>Prix décroissant</string>
          </property>
         </item>
        </widget>
@@ -2028,7 +2160,7 @@ QPushButton:pressed {
        <widget class="QPushButton" name="pushButton_3">
         <property name="geometry">
          <rect>
-          <x>360</x>
+          <x>400</x>
           <y>460</y>
           <width>171</width>
           <height>41</height>
@@ -2078,7 +2210,7 @@ QPushButton:pressed {
        <widget class="QPushButton" name="pushButton_7">
         <property name="geometry">
          <rect>
-          <x>1000</x>
+          <x>990</x>
           <y>460</y>
           <width>131</width>
           <height>41</height>
@@ -2128,10 +2260,10 @@ QPushButton:pressed {
        <widget class="QTableWidget" name="tableWidget_3">
         <property name="geometry">
          <rect>
-          <x>380</x>
+          <x>410</x>
           <y>180</y>
-          <width>731</width>
-          <height>261</height>
+          <width>681</width>
+          <height>271</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -2141,7 +2273,17 @@ color: black;
         </property>
         <column>
          <property name="text">
-          <string>Code</string>
+          <string>Code contrat</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Code sponsor</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Code créateur</string>
          </property>
         </column>
         <column>
@@ -2165,34 +2307,6 @@ color: black;
          </property>
         </column>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_20">
-        <property name="geometry">
-         <rect>
-          <x>860</x>
-          <y>460</y>
-          <width>111</width>
-          <height>41</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>9</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLineEdit {
-    background-color: rgba(255, 255, 255, 30); /* Semi-transparent white background */
-    color: white; /* Text color */
-    border: 1px solid white; /* A subtle, semi-transparent white border */
-    border-radius: 8px; /* Rounded corners */
-    padding: 5px; /* Adds space inside the widget for text, so it's not right up against the edges */
-}</string>
-        </property>
-        <property name="placeholderText">
-         <string>Code</string>
-        </property>
-       </widget>
        <widget class="QLabel" name="label_45">
         <property name="geometry">
          <rect>
@@ -2210,22 +2324,42 @@ background-color: transparent;</string>
          <string/>
         </property>
        </widget>
+       <widget class="QLabel" name="label_alert">
+        <property name="geometry">
+         <rect>
+          <x>650</x>
+          <y>30</y>
+          <width>101</width>
+          <height>71</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+background-color: transparent;</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_6">
        <attribute name="title">
         <string>Statistique</string>
        </attribute>
-       <widget class="QWidget" name="widget_2" native="true">
+       <widget class="QLabel" name="label_stat">
         <property name="geometry">
          <rect>
-          <x>70</x>
-          <y>30</y>
-          <width>791</width>
-          <height>421</height>
+          <x>230</x>
+          <y>20</y>
+          <width>801</width>
+          <height>511</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(255, 255, 255);</string>
+         <string notr="true">background-color: transparent;</string>
+        </property>
+        <property name="text">
+         <string/>
         </property>
        </widget>
       </widget>
@@ -2955,9 +3089,9 @@ background-color: transparent;
      <widget class="QTabWidget" name="Widget">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>0</x>
         <y>10</y>
-        <width>1121</width>
+        <width>1151</width>
         <height>601</height>
        </rect>
       </property>
@@ -4345,7 +4479,7 @@ color: black;
      <x>0</x>
      <y>0</y>
      <width>1437</width>
-     <height>25</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

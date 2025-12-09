@@ -34,6 +34,7 @@ public:
     QSqlQueryModel* afficher();
     bool supprimer(int cin);
 
+<<<<<<< Updated upstream
 private:
     int id_employe;  // auto-increment dans la base
     int cin;
@@ -42,6 +43,33 @@ private:
     QString prenom;
     QString email;
     QString mdp;
+=======
+    // Accès simplifié pour Arduino/Qt
+    static QString getRoleByCin(int cin);
+
+    // Accès simplifié pour Arduino/Qt
+    static QString getRoleByCin(int cin);
+
+    // Accès simplifié pour Arduino/Qt
+    static QString getRoleByCin(int cin);
+
+    // Accès simplifié pour Arduino/Qt
+    static QString getRoleByCin(int cin);
+
+    // Accès simplifié pour Arduino/Qt
+    static QString getRoleByCin(int cin);
+
+    // Affichages avancés
+    QSqlQueryModel* afficherTrieParSalaire();
+    QSqlQueryModel* afficherTrieParNom();
+    QSqlQueryModel* rechercherParCin(const QString &cinPartiel);
+
+    // Face ID
+    static bool saveFaceImage(const QString &email, const QImage &faceImage);
+    static QImage getFaceImage(const QString &email);
+    static QString authenticateByFace(const QImage &capturedImage);
+    static int compareImages(const QImage &img1, const QImage &img2);
+>>>>>>> Stashed changes
 };
 
 #endif // EMPLOYEE_H
